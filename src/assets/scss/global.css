@@ -1,0 +1,764 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@media screen and (min-width: 767px) {
+  body {
+    background: #F4F6ED !important;
+    font-family: 'Poppins', sans-serif !important; } }
+@media screen and (max-width: 767px) {
+  body {
+    background: #F8F8F8 !important;
+    font-family: 'Poppins', sans-serif !important; } }
+.ant-layout {
+  background: #F8F8F8 !important; }
+
+.play-store-wrapper {
+  text-align: center;
+  margin-top: 15px; }
+
+.logo {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.ant-layout-content {
+  margin-left: 15px;
+  margin-right: 15px; }
+
+.mt-30 {
+  margin-top: 30px; }
+
+.d-flex {
+  display: flex; }
+
+.align-items-center {
+  align-items: center; }
+
+.justify-content-between {
+  justify-content: space-between; }
+
+.no-boxshadows {
+  box-shadow: none !important; }
+
+.HpQrcode:hover .qrd {
+  display: block; }
+
+.custom-card-second .ant-card-head {
+  border: none;
+  background-color: #F1F6F1; }
+.custom-card-second .ant-card-head-title {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important; }
+
+#studentShebaV2 {
+  height: 100%;
+  /**Right sidebar***/ }
+  #studentShebaV2 .ant-layout-sider {
+    background: #FCFCFC;
+    padding-top: 15px;
+    padding-bottom: 35px;
+    border-right: 1px solid #CECFCD; }
+  #studentShebaV2 .ant-menu.ant-menu-dark {
+    background: #FCFCFC; }
+  #studentShebaV2 .ant-layout-sider-dark {
+    border-top-left-radius: 38px;
+    border-bottom-left-radius: 38px; }
+  #studentShebaV2 .logo {
+    text-align: center; }
+  #studentShebaV2 .ant-menu {
+    margin-top: 25px; }
+    #studentShebaV2 .ant-menu .ant-menu-item {
+      padding-left: 30px !important;
+      display: flex;
+      align-items: center; }
+  #studentShebaV2 .ant-menu-dark .ant-menu-item > span > a {
+    color: rgba(0, 0, 0, 0.5); }
+  #studentShebaV2 .ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon, #studentShebaV2 .ant-menu-dark .anticon {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 20px; }
+  #studentShebaV2 .ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon, #studentShebaV2 .ant-menu-dark .ant-menu-item-selected .anticon {
+    color: #4D9706; }
+  #studentShebaV2 .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: transparent; }
+    #studentShebaV2 .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected .nav-text {
+      color: #4D9706;
+      position: relative; }
+    #studentShebaV2 .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected::before {
+      content: "";
+      position: absolute;
+      left: 0px;
+      left: 0px;
+      bottom: 5px;
+      height: 30px;
+      width: 5px;
+      background-color: #4D9706;
+      border-radius: 15px; }
+  #studentShebaV2 .logout-btn-wrapper {
+    text-align: center;
+    cursor: pointer;
+    margin: 100px auto 0;
+    width: 60px; }
+    #studentShebaV2 .logout-btn-wrapper .item-text {
+      font-weight: bold;
+      color: #000000; }
+  #studentShebaV2 .ant-layout-sider-collapsed .ant-menu-item {
+    padding-left: 0px; }
+  #studentShebaV2 .ant-layout-sider-collapsed .logo .ant-avatar-image {
+    margin-left: 0px !important; }
+  #studentShebaV2 .play-store-wrapper {
+    text-align: center;
+    display: block;
+    margin-top: 140px;
+    position: absolute;
+    bottom: 30px; }
+    #studentShebaV2 .play-store-wrapper .paly-store-text {
+      margin-bottom: 5px;
+      display: block;
+      font-weight: bold;
+      font-size: 10px;
+      color: #4D9706; }
+  #studentShebaV2 .right-sidebar-wrapper {
+    background: #FCFCFC;
+    border-radius: 0px;
+    padding: 20px 30px;
+    position: relative;
+    border-left: 1px solid #CECFCD; }
+    #studentShebaV2 .right-sidebar-wrapper .customer-care-details-wrapper {
+      width: 100%;
+      margin-right: 30px; }
+      #studentShebaV2 .right-sidebar-wrapper .customer-care-details-wrapper .customer-care-details {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; }
+        #studentShebaV2 .right-sidebar-wrapper .customer-care-details-wrapper .customer-care-details .details {
+          font-size: 11px;
+          font-weight: 600;
+          color: #4D9706;
+          line-height: 1.8;
+          font-style: italic;
+          display: block; }
+        #studentShebaV2 .right-sidebar-wrapper .customer-care-details-wrapper .customer-care-details .phoneNumber {
+          display: block;
+          font-weight: 600;
+          color: #FF071D; }
+  #studentShebaV2 .poweredByText {
+    text-align: center;
+    font-size: 10px;
+    margin-top: 25px;
+    color: #000000;
+    font-size: 12px; }
+  #studentShebaV2 .ant-layout-header {
+    height: auto;
+    line-height: normal; }
+  #studentShebaV2 .institute-name {
+    font-size: 18px;
+    color: #4D9706;
+    font-weight: 600; }
+  #studentShebaV2 .ant-layout-header {
+    background: #F8F8F8; }
+  #studentShebaV2 .anticon-menu-unfold.trigger {
+    margin-top: 30px; }
+  #studentShebaV2 .ins-info-wrapper {
+    padding-left: 20px;
+    padding-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; }
+    #studentShebaV2 .ins-info-wrapper .en-number {
+      padding-right: 5px; }
+    #studentShebaV2 .ins-info-wrapper .acdemic-year {
+      padding-left: 5px; }
+  #studentShebaV2 .ant-layout-header {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 100%;
+    background: #FCFCFC; }
+  #studentShebaV2 .ant-layout-content {
+    margin-top: 25px;
+    height: calc(100vh - 175px);
+    overflow: auto;
+    margin-left: 15px;
+    margin-right: 15px; }
+    #studentShebaV2 .ant-layout-content .ant-card {
+      border: none; }
+      #studentShebaV2 .ant-layout-content .ant-card .ant-card-head {
+        border-width: 10px;
+        border-color: #F8F8F8; }
+        #studentShebaV2 .ant-layout-content .ant-card .ant-card-head .ant-card-head-wrapper .ant-card-head-title {
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 1.8;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          display: block; }
+      #studentShebaV2 .ant-layout-content .ant-card .info-wrapper .title {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 2.4; }
+      #studentShebaV2 .ant-layout-content .ant-card .info-wrapper .separator {
+        font-size: 14px;
+        line-height: 2.4; }
+      #studentShebaV2 .ant-layout-content .ant-card .info-wrapper .details {
+        font-size: 14px;
+        line-height: 2.4; }
+      #studentShebaV2 .ant-layout-content .ant-card .info-wrapper .ant-avatar {
+        border: 1px solid #4D9706;
+        margin-bottom: 30px; }
+  #studentShebaV2 .custon-form-wrapper .ant-select-single .ant-select-selector .ant-select-selection-item, #studentShebaV2 .custon-form-wrapper .ant-select-single .ant-select-selector .ant-select-selection-placeholder {
+    line-height: 44px; }
+  #studentShebaV2 .custon-form-wrapper .ant-select .ant-select-selector {
+    height: 44px !important; }
+  #studentShebaV2 .custon-form-wrapper .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border-radius: 7px; }
+  #studentShebaV2 .custon-form-wrapper .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border-color: #ABA7A7; }
+  #studentShebaV2 .custon-form-wrapper .ant-input {
+    height: 44px !important;
+    line-height: 44px;
+    border-color: #ABA7A7;
+    border-radius: 7px; }
+  #studentShebaV2 .ant-form input[type='file'] {
+    border-color: #ABA7A7;
+    border-radius: 7px; }
+  #studentShebaV2 .success-button.ant-btn-primary {
+    color: #fff;
+    background: #4D9706 !important;
+    border-color: #4D9706 !important;
+    border-radius: 7px;
+    height: 44px; }
+  #studentShebaV2 .success-button:disabled {
+    background: #677c54 !important;
+    border-color: #677c54 !important;
+    color: #adadad !important; }
+  #studentShebaV2 .danger-button.ant-btn-primary {
+    color: #fff;
+    background: #FF071D;
+    border-color: #FF071D;
+    border-radius: 7px;
+    height: 44px; }
+  #studentShebaV2 .ant-pagination {
+    margin-bottom: 0px; }
+  #studentShebaV2 .payment-instruction-wrapper {
+    margin-left: 25px; }
+    #studentShebaV2 .payment-instruction-wrapper span {
+      display: block;
+      font-size: 12px; }
+    #studentShebaV2 .payment-instruction-wrapper .text-highlight {
+      color: #FF071D; }
+  #studentShebaV2 .ant-table-tbody > tr.ant-table-row-selected > td {
+    background: rgba(77, 151, 6, 0.3);
+    border-color: rgba(0, 0, 0, 0.03); }
+  #studentShebaV2 .ant-table-row.ant-table-row-selected:hover {
+    background: rgba(77, 151, 6, 0.3); }
+  #studentShebaV2 .payable-wrapper .payment-input input {
+    background: #FFFFFF;
+    border: none; }
+  #studentShebaV2 .payable-wrapper .payment-input span {
+    display: block;
+    margin-bottom: 5px; }
+  #studentShebaV2 .payable-wrapper .success-button {
+    height: auto; }
+  #studentShebaV2 .custom-table .ant-table-thead > tr > th {
+    background: #F1F6F1; }
+  #studentShebaV2 .custom-inner-card .ant-card-head {
+    border-width: 0px !important;
+    border-color: transparent !important;
+    padding: 0; }
+  #studentShebaV2 .custom-inner-card .ant-card-head-wrapper {
+    border: 1px solid #EBE9E9;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px; }
+  #studentShebaV2 .custom-card-view.ant-card {
+    box-shadow: none !important; }
+  #studentShebaV2 .custom-card-view .ant-card-body {
+    padding: 0 !important; }
+  @media screen and (max-width: 1000px) {
+    #studentShebaV2 body {
+      background: none !important; }
+    #studentShebaV2 .login-page-wrapper {
+      justify-content: center !important;
+      display: block !important;
+      padding: 15px !important;
+      height: 100%;
+      background-image: none !important; }
+      #studentShebaV2 .login-page-wrapper .login-form-wrapper {
+        margin-top: 0 !important;
+        display: block !important;
+        padding-right: 0px !important; }
+        #studentShebaV2 .login-page-wrapper .login-form-wrapper .copyright-text {
+          bottom: 0 !important;
+          right: auto !important;
+          position: relative !important;
+          display: none !important; }
+        #studentShebaV2 .login-page-wrapper .login-form-wrapper .social-button-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 50px;
+          padding-left: 20px;
+          padding-right: 20px; }
+          #studentShebaV2 .login-page-wrapper .login-form-wrapper .social-button-wrapper .ant-btn-primary {
+            background: #4D9706 !important;
+            border-color: #4D9706 !important;
+            padding: 0 !important; }
+      #studentShebaV2 .login-page-wrapper .login-form-inner {
+        margin: 0 auto; }
+    #studentShebaV2 .success-button.ant-btn-primary {
+      color: #FFFFFF !important;
+      background: #4D9706 !important;
+      border-color: #4D9706 !important;
+      border-radius: 7px;
+      height: 44px; } }
+  #studentShebaV2 .login-page-wrapper {
+    background-color: #F8F8F8;
+    background-image: url("../../images/login-bottom-bg.png");
+    padding: 75px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%; }
+    #studentShebaV2 .login-page-wrapper .login-side-wrapper {
+      align-items: flex-start;
+      position: relative;
+      padding: 12rem 0rem; }
+      #studentShebaV2 .login-page-wrapper .login-side-wrapper .play-store-wrapper {
+        position: absolute;
+        bottom: 10px;
+        text-align: left; }
+        #studentShebaV2 .login-page-wrapper .login-side-wrapper .play-store-wrapper p {
+          color: #000000;
+          font-size: 10px; }
+    #studentShebaV2 .login-page-wrapper .login-form-wrapper {
+      width: auto !important;
+      position: relative;
+      align-items: flex-start;
+      margin-top: 8rem;
+      padding-right: 60px; }
+      #studentShebaV2 .login-page-wrapper .login-form-wrapper .loginLogo {
+        width: auto; }
+      #studentShebaV2 .login-page-wrapper .login-form-wrapper .copyright-text {
+        margin-bottom: 0;
+        font-size: 10px;
+        position: absolute;
+        bottom: 35px;
+        right: 60px; }
+      #studentShebaV2 .login-page-wrapper .login-form-wrapper .login-form-inner {
+        background: #FFFFFF;
+        padding: 45px 40px;
+        border-radius: 40px;
+        -webkit-box-shadow: 2px 3px 14px 7px #0000003d;
+        box-shadow: 2px 3px 14px 7px #0000003d;
+        width: 400px; }
+      #studentShebaV2 .login-page-wrapper .login-form-wrapper .success-button {
+        border-radius: 50px;
+        margin-bottom: 15px; }
+      #studentShebaV2 .login-page-wrapper .login-form-wrapper .ant-checkbox-wrapper {
+        margin-left: 20px; }
+      #studentShebaV2 .login-page-wrapper .login-form-wrapper .social-button-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 50px;
+        padding-left: 20px;
+        padding-right: 20px; }
+        #studentShebaV2 .login-page-wrapper .login-form-wrapper .social-button-wrapper .ant-btn-primary {
+          background: #4D9706;
+          border-color: #4D9706; }
+      #studentShebaV2 .login-page-wrapper .login-form-wrapper .ant-form-item-control-input-content {
+        border-bottom: none !important; }
+      #studentShebaV2 .login-page-wrapper .login-form-wrapper .ant-form-item-control-input {
+        padding: 5px 10px;
+        background: #FFFFFF;
+        border-radius: 50px;
+        padding: 2px 10px;
+        border: 1px solid #efefef !important;
+        border-radius: 50px;
+        -webkit-box-shadow: 2px 3px 14px 7px #00000011;
+        box-shadow: 2px 3px 14px 7px #00000011; }
+        #studentShebaV2 .login-page-wrapper .login-form-wrapper .ant-form-item-control-input svg {
+          color: #707070; }
+      #studentShebaV2 .login-page-wrapper .login-form-wrapper .ant-form-item-explain-error {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding-left: 15px; }
+    #studentShebaV2 .login-page-wrapper .login-banner-wrapper {
+      padding-left: 20%; }
+      #studentShebaV2 .login-page-wrapper .login-banner-wrapper img {
+        max-width: 100%;
+        height: 100%; }
+    #studentShebaV2 .login-page-wrapper .login-title {
+      margin-bottom: 15px; }
+      #studentShebaV2 .login-page-wrapper .login-title p {
+        font-size: 24px;
+        color: #000000;
+        font-weight: 400; }
+  @media screen and (max-width: 1030px) {
+    #studentShebaV2 .login-banner-wrapper {
+      padding-left: 0% !important;
+      padding-right: 10% !important; }
+    #studentShebaV2 .login-form-wrapper {
+      padding-right: 0% !important; } }
+
+#studentShebaMobileV2 {
+  /***side bar***/
+  /**Right sidebar***/ }
+  #studentShebaMobileV2 .login-page-wrapper {
+    justify-content: center !important;
+    display: block !important;
+    padding: 15px !important;
+    height: 100%;
+    background-color: none;
+    background-image: none;
+    background-image: none !important; }
+    #studentShebaMobileV2 .login-page-wrapper .login-form-wrapper {
+      margin-top: 0 !important;
+      display: block !important;
+      padding-right: 0px !important;
+      display: block !important; }
+      #studentShebaMobileV2 .login-page-wrapper .login-form-wrapper .loginLogo {
+        width: auto; }
+      #studentShebaMobileV2 .login-page-wrapper .login-form-wrapper .login-form-logo {
+        margin-top: 95px; }
+      #studentShebaMobileV2 .login-page-wrapper .login-form-wrapper .copyright-text {
+        margin-bottom: 0;
+        font-size: 10px;
+        position: absolute;
+        bottom: 35px;
+        right: 60px; }
+      #studentShebaMobileV2 .login-page-wrapper .login-form-wrapper .login-form-inner {
+        background: #F8F8F8;
+        -webkit-box-shadow: 2px 3px 14px 7px #0000003d;
+        box-shadow: 2px 3px 14px 7px #0000003d; }
+      #studentShebaMobileV2 .login-page-wrapper .login-form-wrapper .success-button {
+        border-radius: 50px;
+        margin-bottom: 15px; }
+      #studentShebaMobileV2 .login-page-wrapper .login-form-wrapper .ant-checkbox-wrapper {
+        margin-left: 20px; }
+      #studentShebaMobileV2 .login-page-wrapper .login-form-wrapper .social-button-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 50px;
+        padding-left: 20px;
+        padding-right: 20px; }
+        #studentShebaMobileV2 .login-page-wrapper .login-form-wrapper .social-button-wrapper .ant-btn-primary {
+          background: #4D9706;
+          border-color: #4D9706; }
+      #studentShebaMobileV2 .login-page-wrapper .login-form-wrapper .ant-form-item-control-input-content {
+        border-bottom: none !important; }
+      #studentShebaMobileV2 .login-page-wrapper .login-form-wrapper .ant-form-item-control-input {
+        padding: 5px 10px;
+        background: #FFFFFF;
+        border-radius: 50px;
+        padding: 2px 10px;
+        border: 1px solid #efefef !important;
+        border-radius: 50px; }
+        #studentShebaMobileV2 .login-page-wrapper .login-form-wrapper .ant-form-item-control-input svg {
+          color: #707070; }
+      #studentShebaMobileV2 .login-page-wrapper .login-form-wrapper ant-form-item-control-input:focus {
+        border-color: yellow; }
+      #studentShebaMobileV2 .login-page-wrapper .login-form-wrapper .ant-form-item-explain-error {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding-left: 15px; }
+      #studentShebaMobileV2 .login-page-wrapper .login-form-wrapper .success-button.ant-btn-primary {
+        color: #FFFFFF !important;
+        background: #4D9706 !important;
+        border-color: #4D9706 !important;
+        border-radius: 7px;
+        height: 44px; }
+  #studentShebaMobileV2 .social-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 50PX;
+    padding-left: 20px;
+    padding-right: 20px; }
+    #studentShebaMobileV2 .social-button-wrapper .ant-btn-primary {
+      background: #4D9706 !important;
+      border-color: #4D9706 !important;
+      padding-bottom: 0; }
+  #studentShebaMobileV2 .copyright {
+    margin-top: 25px;
+    margin-bottom: 25px; }
+    #studentShebaMobileV2 .copyright a {
+      color: #000000; }
+  #studentShebaMobileV2 .ant-layout-header {
+    background: #FFFFFF !important; }
+    #studentShebaMobileV2 .ant-layout-header svg {
+      color: #000000; }
+  #studentShebaMobileV2 .institute-name {
+    display: block;
+    color: #000000; }
+  #studentShebaMobileV2 .ant-layout-sider {
+    background: #FCFCFC;
+    padding-top: 15px;
+    padding-bottom: 35px;
+    border-right: 1px solid #CECFCD; }
+  #studentShebaMobileV2 .ant-menu.ant-menu-dark {
+    background: #FCFCFC; }
+  #studentShebaMobileV2 .ant-layout-sider-dark {
+    border-top-left-radius: 38px;
+    border-bottom-left-radius: 38px; }
+  #studentShebaMobileV2 .logo {
+    text-align: center; }
+  #studentShebaMobileV2 .ant-menu {
+    margin-top: 25px; }
+    #studentShebaMobileV2 .ant-menu .ant-menu-item {
+      padding-left: 30px !important;
+      display: flex;
+      align-items: center; }
+  #studentShebaMobileV2 .ant-menu-dark .ant-menu-item > span > a {
+    color: rgba(0, 0, 0, 0.5); }
+  #studentShebaMobileV2 .ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon, #studentShebaMobileV2 .ant-menu-dark .anticon {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 20px; }
+  #studentShebaMobileV2 .ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon, #studentShebaMobileV2 .ant-menu-dark .ant-menu-item-selected .anticon {
+    color: #4D9706; }
+  #studentShebaMobileV2 .ant-layout-sider {
+    background: #FCFCFC;
+    padding-top: 15px;
+    padding-bottom: 35px;
+    border-right: 1px solid #CECFCD; }
+  #studentShebaMobileV2 .ant-menu.ant-menu-dark {
+    background: #FCFCFC; }
+  #studentShebaMobileV2 .ant-layout-sider-dark {
+    border-top-left-radius: 38px;
+    border-bottom-left-radius: 38px; }
+  #studentShebaMobileV2 .logo {
+    text-align: center; }
+  #studentShebaMobileV2 .ant-menu {
+    margin-top: 25px; }
+    #studentShebaMobileV2 .ant-menu .ant-menu-item {
+      padding-left: 30px !important;
+      display: flex;
+      align-items: center; }
+  #studentShebaMobileV2 .ant-menu-dark .ant-menu-item > span > a {
+    color: rgba(0, 0, 0, 0.5); }
+  #studentShebaMobileV2 .ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon, #studentShebaMobileV2 .ant-menu-dark .anticon {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 20px; }
+  #studentShebaMobileV2 .ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon, #studentShebaMobileV2 .ant-menu-dark .ant-menu-item-selected .anticon {
+    color: #4D9706; }
+  #studentShebaMobileV2 .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: transparent; }
+    #studentShebaMobileV2 .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected .nav-text {
+      color: #4D9706;
+      position: relative; }
+    #studentShebaMobileV2 .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected::before {
+      content: "";
+      position: absolute;
+      left: 0px;
+      left: 0px;
+      bottom: 5px;
+      height: 30px;
+      width: 5px;
+      background-color: #4D9706;
+      border-radius: 15px; }
+  #studentShebaMobileV2 .logout-btn-wrapper {
+    text-align: center;
+    cursor: pointer;
+    margin: 100px auto 0;
+    width: 60px; }
+    #studentShebaMobileV2 .logout-btn-wrapper .item-text {
+      font-weight: bold;
+      color: #000000; }
+  #studentShebaMobileV2 .ant-layout-sider-collapsed .ant-menu-item {
+    padding-left: 0px; }
+  #studentShebaMobileV2 .ant-layout-sider-collapsed .logo .ant-avatar-image {
+    margin-left: 0px !important; }
+  #studentShebaMobileV2 .play-store-wrapper {
+    text-align: center;
+    display: block;
+    margin-top: 140px;
+    position: absolute;
+    bottom: 30px; }
+    #studentShebaMobileV2 .play-store-wrapper .paly-store-text {
+      margin-bottom: 5px;
+      display: block;
+      font-weight: bold;
+      font-size: 10px;
+      color: #4D9706; }
+  #studentShebaMobileV2 .right-sidebar-wrapper {
+    background: #FCFCFC;
+    border-radius: 0px;
+    padding: 20px 30px;
+    position: relative;
+    border-left: 1px solid #CECFCD; }
+    #studentShebaMobileV2 .right-sidebar-wrapper .customer-care-details-wrapper {
+      width: 100%;
+      margin-right: 30px; }
+      #studentShebaMobileV2 .right-sidebar-wrapper .customer-care-details-wrapper .customer-care-details {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; }
+        #studentShebaMobileV2 .right-sidebar-wrapper .customer-care-details-wrapper .customer-care-details .details {
+          font-size: 11px;
+          font-weight: 600;
+          color: #4D9706;
+          line-height: 1.8;
+          font-style: italic;
+          display: block; }
+        #studentShebaMobileV2 .right-sidebar-wrapper .customer-care-details-wrapper .customer-care-details .phoneNumber {
+          display: block;
+          font-weight: 600;
+          color: #FF071D; }
+  #studentShebaMobileV2 .poweredByText {
+    text-align: center;
+    font-size: 10px;
+    margin-top: 25px;
+    color: #000000;
+    font-size: 12px; }
+  #studentShebaMobileV2 .ant-menu-item {
+    border-top: none; }
+  #studentShebaMobileV2 .ant-menu.ant-menu-dark {
+    background: transparent !important; }
+  #studentShebaMobileV2 .ant-layout-sider {
+    background: #FCFCFC !important; }
+  #studentShebaMobileV2 .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background: transparent !important; }
+  #studentShebaMobileV2 .ant-layout-sider-dark {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px; }
+  #studentShebaMobileV2 .poweredByText {
+    padding: 0 15PX; }
+  #studentShebaMobileV2 .customer-care-details-wrapper {
+    width: 100%;
+    margin-right: 30px; }
+    #studentShebaMobileV2 .customer-care-details-wrapper .customer-care-details {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      #studentShebaMobileV2 .customer-care-details-wrapper .customer-care-details .details {
+        font-size: 11px;
+        font-weight: 600;
+        color: #4D9706;
+        line-height: 1.8;
+        font-style: italic;
+        display: block; }
+      #studentShebaMobileV2 .customer-care-details-wrapper .customer-care-details .phoneNumber {
+        display: block;
+        font-weight: 600;
+        color: #FF071D; }
+  #studentShebaMobileV2 .ant-layout-content {
+    margin-top: 25px;
+    height: calc(100vh - 175px);
+    overflow: auto;
+    margin-left: 15px;
+    margin-right: 15px; }
+    #studentShebaMobileV2 .ant-layout-content .ant-card {
+      border: none; }
+      #studentShebaMobileV2 .ant-layout-content .ant-card .ant-card-head {
+        border-width: 10px;
+        border-color: #F8F8F8; }
+        #studentShebaMobileV2 .ant-layout-content .ant-card .ant-card-head .ant-card-head-wrapper .ant-card-head-title {
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 1.8;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          display: block; }
+      #studentShebaMobileV2 .ant-layout-content .ant-card .info-wrapper .title {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 2.4; }
+      #studentShebaMobileV2 .ant-layout-content .ant-card .info-wrapper .separator {
+        font-size: 14px;
+        line-height: 2.4; }
+      #studentShebaMobileV2 .ant-layout-content .ant-card .info-wrapper .details {
+        font-size: 14px;
+        line-height: 2.4; }
+      #studentShebaMobileV2 .ant-layout-content .ant-card .info-wrapper .ant-avatar {
+        border: 1px solid #4D9706;
+        margin-bottom: 30px; }
+  #studentShebaMobileV2 .custon-form-wrapper .ant-select-single .ant-select-selector .ant-select-selection-item, #studentShebaMobileV2 .custon-form-wrapper .ant-select-single .ant-select-selector .ant-select-selection-placeholder {
+    line-height: 44px; }
+  #studentShebaMobileV2 .custon-form-wrapper .ant-select .ant-select-selector {
+    height: 44px !important; }
+  #studentShebaMobileV2 .custon-form-wrapper .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border-radius: 7px; }
+  #studentShebaMobileV2 .custon-form-wrapper .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border-color: #ABA7A7; }
+  #studentShebaMobileV2 .custon-form-wrapper .ant-input {
+    height: 44px !important;
+    line-height: 44px;
+    border-color: #ABA7A7;
+    border-radius: 7px; }
+  #studentShebaMobileV2 .ant-form input[type='file'] {
+    border-color: #ABA7A7;
+    border-radius: 7px; }
+  #studentShebaMobileV2 .success-button.ant-btn-primary {
+    color: #fff;
+    background: #4D9706 !important;
+    border-color: #4D9706 !important;
+    border-radius: 7px;
+    height: 44px; }
+  #studentShebaMobileV2 .success-button:disabled {
+    background: #677c54 !important;
+    border-color: #677c54 !important;
+    color: #adadad !important; }
+  #studentShebaMobileV2 .danger-button.ant-btn-primary {
+    color: #fff;
+    background: #FF071D;
+    border-color: #FF071D;
+    border-radius: 7px;
+    height: 44px; }
+  #studentShebaMobileV2 .ant-pagination {
+    margin-bottom: 0px; }
+  #studentShebaMobileV2 .payment-instruction-wrapper {
+    margin-left: 25px; }
+    #studentShebaMobileV2 .payment-instruction-wrapper span {
+      display: block;
+      font-size: 12px; }
+    #studentShebaMobileV2 .payment-instruction-wrapper .text-highlight {
+      color: #FF071D; }
+  #studentShebaMobileV2 .ant-table-tbody > tr.ant-table-row-selected > td {
+    background: rgba(77, 151, 6, 0.3);
+    border-color: rgba(0, 0, 0, 0.03); }
+  #studentShebaMobileV2 .ant-table-row.ant-table-row-selected:hover {
+    background: rgba(77, 151, 6, 0.3); }
+  #studentShebaMobileV2 .payable-wrapper .payment-input input {
+    background: #FFFFFF;
+    border: none; }
+  #studentShebaMobileV2 .payable-wrapper .payment-input span {
+    display: block;
+    margin-bottom: 5px; }
+  #studentShebaMobileV2 .payable-wrapper .success-button {
+    height: auto; }
+  #studentShebaMobileV2 .custom-table .ant-table-thead > tr > th {
+    background: #F1F6F1; }
+  #studentShebaMobileV2 .custom-inner-card .ant-card-head {
+    border-width: 0px !important;
+    border-color: transparent !important;
+    padding: 0; }
+  #studentShebaMobileV2 .custom-inner-card .ant-card-head-wrapper {
+    border: 1px solid #EBE9E9;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px; }
+  #studentShebaMobileV2 .custom-card-view.ant-card {
+    box-shadow: none !important; }
+  #studentShebaMobileV2 .custom-card-view .ant-card-body {
+    padding: 0 !important; }
+
+.ant-btn-primary.download-button {
+  color: #fff;
+  background: #4D9706 !important;
+  border-color: #4D9706 !important;
+  border-radius: 7px;
+  height: 44px; }
+
+.ant-modal-footer .ant-btn-primary {
+  color: #fff;
+  background: #4D9706 !important;
+  border-color: #4D9706 !important;
+  border-radius: 7px;
+  height: 44px; }
+
+/*# sourceMappingURL=global.css.map */

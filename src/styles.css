@@ -1,0 +1,274 @@
+html, body, #root {
+    height: 100%;
+}
+.login-page-wrapper {
+    height: calc(100% - 52px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.login-title {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.loginLogo {
+    width: 130px;
+}
+
+.login-form-wrapper {
+    position: relative;
+}
+
+.login-form-wrapper .login-title p {
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 0;
+    line-height: 1.8;
+    color: #000000;
+}
+
+.login-form-wrapper .login-form-logo {
+    margin-bottom: 15px;
+}
+
+.login-form-wrapper .ant-form-item-control-input-content {
+    border: none !important;
+    border-bottom: 2px solid #2b04f3 !important;
+    border-radius: 0;
+}
+
+.login-form-wrapper .ant-input-affix-wrapper {
+    border: none !important;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.login-form-wrapper .ant-input-affix-wrapper:focus, .ant-input-affix-wrapper-focused {
+    border-color: transparent;
+    box-shadow: none !important;
+}
+
+.login-form-wrapper .ant-btn-primary {
+    background: #360A64;
+    border-color: #360A64;
+}
+
+.login-form-wrapper .ant-btn-primary:hover, .login-form-wrapper .ant-btn-primary:focus {
+    color: #fff;
+    background: #360A64;
+    border-color: #360A64;
+}
+
+.login-subtitle {
+    font-size: 1.2rem;
+    font-weight: 200;
+    margin: 1rem 0 3rem 0;
+    color: rgba(255, 255, 255, 1);
+}
+
+.helpline {
+    font-size: 1rem;
+    font-weight: 200;
+    color: rgba(255, 255, 255, 1);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* .footer{
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+} */
+
+.loginIcons {
+    display: flex;
+    align-items: center;
+}
+
+.loginIcons span:not(.anticon) {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.loginIcons span.anticon {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.loginIcons {
+    display: none;
+}
+
+.login-side-wrapper {
+    display: none;
+}
+
+.login-form-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.footer {
+    text-align: center !important;
+}
+
+.mujib-logo {
+    height: 100px;
+    width: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.text-between-image {
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    left: 15%;
+    right: 12%;
+    top: 2%;
+    text-align: justify;
+    color: red;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 500px) {
+    .text-between-image {
+        font-size: 10px;
+        top: 20px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .text-between-image {
+        font-size: 10px;
+        top: 20px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .text-between-image {
+        font-size: 12px;
+        top: 20px;
+    }
+}
+
+.sonalibank-logo {
+    height: 100px;
+    width: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.sonali-logo {
+    height: 150px;
+    width: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* position: absolute;
+    top: 20px;
+    left: 10px; */
+}
+
+@media screen and (max-width:620) {
+    .mujib-logo {
+        display: none;
+    }
+    .sonalibank-logo {
+        display: none;
+    }
+}
+
+.login-ad-image {
+    display: none;
+}
+
+@media screen and (min-width:1000px) {
+    .login-page-wrapper {
+        height: 100%;
+    }
+    .login-side-wrapper {
+        height: 100%;
+        width: 600px;
+        padding: 3rem 3.5rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .login-form-wrapper {
+        width: calc(100% - 600px);
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        background: transparent;
+        height: 100%;
+    }
+    .loginIcons {
+        display: block;
+    }
+    .loginIcons span, .loginIcons a {
+        color: #ffffff;
+    }
+    footer {
+        /* width: calc(100% - 600px) !important; */
+        position: fixed;
+        right: 0px;
+        padding: 15px;
+        bottom: 0px;
+    }
+    .sonali-logo {
+        height: 77px;
+        width: 250px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        /* position: absolute;
+        top: 10px;
+        left: 10px; */
+    }
+    .sheba-logo {
+        height: 75px;
+        width: 200px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .login-ad-image {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 25px;
+    }
+}

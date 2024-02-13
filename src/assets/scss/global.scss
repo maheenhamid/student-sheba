@@ -1,0 +1,296 @@
+$primaryColor: #F4F6ED;
+$sidebarColor:#FCFCFC;
+$bgColor:#F8F8F8;
+$colorDark: #000000;
+$colorGreen: #4D9706;
+$colorGreenDisable: #677c54;
+$colorRed: #FF071D;
+$colorWhite: #FFFFFF;
+$rightSideBarBg: #EBE9E9;
+$borderColor:#CECFCD;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@media screen and (min-width: 767px) {
+    body{
+        background: $primaryColor !important;
+        font-family: 'Poppins', sans-serif !important;
+    }
+}
+@media screen and (max-width: 767px) {
+    body{
+        background: $bgColor !important;
+        font-family: 'Poppins', sans-serif !important;
+    }
+}
+.ant-layout{
+    background: $bgColor !important;
+}
+.play-store-wrapper{
+    text-align: center;
+    margin-top: 15px;
+}
+.logo{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+.ant-layout-content{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.mt-30{
+    margin-top: 30px;
+}
+.d-flex{
+    display: flex;
+}
+.align-items-center{
+    align-items: center;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
+.no-boxshadows{
+    box-shadow: none !important;
+}
+.HpQrcode {
+    &:hover{
+        .qrd{
+            display: block;
+        }
+        
+    }
+    
+}
+.custom-card-second{
+    .ant-card-head{
+        border: none;
+        background-color: #F1F6F1;
+    }
+    .ant-card-head-title{
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+}
+#studentShebaV2{
+    height: 100%;
+    @import 'sidebar.scss';
+    @import 'topbar.scss';
+    @import 'main_content.scss';
+    @import 'login.scss';
+}
+#studentShebaMobileV2{
+    .login-page-wrapper{
+        justify-content: center !important;
+        display: block !important;
+        padding: 15px !important;
+        height: 100%;
+        background-color: none;
+        background-image: none;
+        background-image:none !important;
+        .login-form-wrapper{
+            margin-top: 0 !important;
+            display: block !important;
+            padding-right: 0px !important;
+            display: block !important;
+            .loginLogo{
+                width: auto;
+            }
+            .login-form-logo{
+                margin-top: 95px;
+            }
+            .copyright-text{
+                margin-bottom: 0;
+                font-size: 10px;
+                position: absolute;
+                bottom: 35px;
+                right: 60px;
+            }
+            .login-form-inner{
+                background: $bgColor;
+                -webkit-box-shadow: 2px 3px 14px 7px #0000003d; 
+                box-shadow: 2px 3px 14px 7px #0000003d;
+            }
+            .success-button{
+                border-radius: 50px;
+                margin-bottom: 15px;
+            }
+            .ant-checkbox-wrapper{
+                margin-left: 20px;
+            }
+            .social-button-wrapper{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 50px;
+                padding-left: 20px;
+                padding-right: 20px;
+                .ant-btn-primary{
+                    background: $colorGreen;
+                    border-color: $colorGreen;
+                }
+            }
+            .ant-form-item-control-input-content{
+                border-bottom: none !important;
+            }
+            .ant-form-item-control-input{
+                padding: 5px 10px;
+                background: $colorWhite;
+                border-radius: 50px;
+                padding: 2px 10px;
+                border: 1px solid #efefef !important;
+                border-radius: 50px;
+                svg{
+                    color: #707070;
+                }
+            }
+            ant-form-item-control-input:focus {
+                border-color: yellow;
+              }
+            .ant-form-item-explain-error{
+                margin-top: 5px;
+                margin-bottom: 5px;
+                padding-left: 15px;
+            }
+            .success-button{
+                &.ant-btn-primary {
+                    color: $colorWhite !important;
+                    background: $colorGreen !important;
+                    border-color: $colorGreen !important;
+                    border-radius: 7px;
+                    height: 44px;
+                }
+            }
+        }
+    } 
+    .social-button-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 50px;
+        margin-bottom: 50PX;
+        padding-left: 20px;
+        padding-right: 20px;
+        .ant-btn-primary{
+            background: $colorGreen !important;
+            border-color: $colorGreen !important;
+            padding-bottom: 0;
+        }
+    }
+    .copyright{
+        margin-top: 25px;
+        margin-bottom: 25px;
+        a{
+            color: $colorDark;
+        }
+    }
+    .ant-layout-header{
+        background: $colorWhite !important;
+        svg{
+            color: $colorDark;
+        }
+    }
+    .institute-name{
+        display: block;
+        color: $colorDark;
+    }
+    /***side bar***/
+    .ant-layout-sider{
+        background: $sidebarColor;
+        padding-top: 15px;
+        padding-bottom: 35px;
+        border-right: 1px solid $borderColor;
+    }
+    .ant-menu.ant-menu-dark{
+        background: $sidebarColor;
+    }
+    .ant-layout-sider-dark{
+        border-top-left-radius: 38px;
+        border-bottom-left-radius: 38px;
+    }
+    .logo{
+        text-align: center;
+    }
+    .ant-menu{
+        margin-top: 25px;
+        .ant-menu-item{
+            padding-left: 30px !important;
+            display: flex;
+            align-items: center;
+        }
+    }
+    .ant-menu-dark .ant-menu-item > span > a{
+        color: rgba(0,0,0,0.5);
+    }
+    
+    .ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon, .ant-menu-dark .anticon{
+        color: rgba(0,0,0,0.5);
+        font-size: 20px;
+    }
+    
+    .ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon, .ant-menu-dark .ant-menu-item-selected .anticon{
+        color: $colorGreen;
+    }
+    @import 'sidebar.scss';
+    .ant-menu-item{
+        border-top: none;
+    }
+    .ant-menu.ant-menu-dark{
+        background: transparent !important;
+    }
+    .ant-layout-sider{
+        background: $sidebarColor !important;
+    }
+    .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected{
+        background: transparent !important;
+    }
+    .ant-layout-sider-dark {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+    .poweredByText{
+        padding: 0 15PX;
+    }
+    .customer-care-details-wrapper{
+        width: 100%;
+        margin-right: 30px;
+        .customer-care-details{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .details{
+                font-size: 11px;
+                font-weight: 600;
+                color: $colorGreen;
+                line-height: 1.8;
+                font-style: italic;
+                display: block;
+            }
+            .phoneNumber{
+                display: block;
+                font-weight: 600;
+                color: $colorRed;
+            }
+        }
+    }
+    @import 'main_content.scss';
+    
+}
+.ant-btn-primary{
+    &.download-button{
+        color: #fff;
+        background: $colorGreen !important;
+        border-color: $colorGreen !important;
+        border-radius: 7px;
+        height: 44px;
+    }
+}
+.ant-modal-footer{
+    .ant-btn-primary{
+        color: #fff;
+        background: $colorGreen !important;
+        border-color: $colorGreen !important;
+        border-radius: 7px;
+        height: 44px;
+    }
+}

@@ -1,0 +1,129 @@
+.ant-layout-sider{
+    background: $sidebarColor;
+    padding-top: 15px;
+    padding-bottom: 35px;
+    border-right: 1px solid $borderColor;
+}
+.ant-menu.ant-menu-dark{
+    background: $sidebarColor;
+}
+.ant-layout-sider-dark{
+    border-top-left-radius: 38px;
+    border-bottom-left-radius: 38px;
+}
+.logo{
+    text-align: center;
+}
+.ant-menu{
+    margin-top: 25px;
+    .ant-menu-item{
+        padding-left: 30px !important;
+        display: flex;
+        align-items: center;
+    }
+}
+.ant-menu-dark .ant-menu-item > span > a{
+    color: rgba(0,0,0,0.5);
+}
+
+.ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon, .ant-menu-dark .anticon{
+    color: rgba(0,0,0,0.5);
+    font-size: 20px;
+}
+
+.ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon, .ant-menu-dark .ant-menu-item-selected .anticon{
+    color: $colorGreen;
+}
+
+.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: transparent;
+    .nav-text{
+        color: $colorGreen;
+        position: relative;
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0px;
+        left: 0px;
+        bottom: 5px;
+        height: 30px;
+        width: 5px;
+        background-color: $colorGreen;
+        border-radius: 15px;
+    }
+}
+.logout-btn-wrapper{
+
+    text-align: center;
+    cursor: pointer;
+    margin: 100px auto 0;
+    width: 60px;
+    .item-text{
+        font-weight: bold;
+        color: $colorDark;
+    }
+}
+.ant-layout-sider-collapsed{
+    .ant-menu-item{
+        padding-left: 0px;
+    }
+    .logo{
+        .ant-avatar-image{
+            margin-left: 0px !important;
+        }
+    }
+}
+.play-store-wrapper{
+    text-align: center;
+    display: block;
+    margin-top: 140px;
+    position: absolute;
+    bottom: 30px;
+    .paly-store-text{
+        margin-bottom: 5px;
+        display: block;
+        font-weight: bold;
+        font-size: 10px;
+        color: $colorGreen;
+    }
+}
+/**Right sidebar***/
+.right-sidebar-wrapper{
+    background: $sidebarColor;
+    border-radius: 0px;
+    padding: 20px 30px;
+    position: relative;
+    border-left: 1px solid $borderColor;
+    .customer-care-details-wrapper{
+        width: 100%;
+        margin-right: 30px;
+        .customer-care-details{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .details{
+                font-size: 11px;
+                font-weight: 600;
+                color: $colorGreen;
+                line-height: 1.8;
+                font-style: italic;
+                display: block;
+            }
+            .phoneNumber{
+                display: block;
+                font-weight: 600;
+                color: $colorRed;
+            }
+        }
+    }
+}
+.poweredByText {
+    text-align: center;
+    font-size: 10px;
+    margin-top: 25px;
+    color: $colorDark;
+    font-size: 12px;
+    // position: absolute;
+    // bottom: 30px;
+}

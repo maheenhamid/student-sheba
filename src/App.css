@@ -1,0 +1,443 @@
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  text-align: right;
+  height: 30px;
+}
+
+
+.navHeaderRight {
+  height: 45px;
+  display: flex;
+  align-self: flex-end;
+  align-items: center;
+  margin-right: 50px;
+}
+.navbarHeaderRight {
+  margin-right: 20px;
+}
+
+.loading {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Transparent Overlay */
+.loading:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+    background: radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0, .8));
+
+  background: -webkit-radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0,.8));
+}
+input.ant-input.ant-input-disabled {
+  color: gray;
+}
+
+.w3-card-4, .w3-hover-shadow:hover {
+  box-shadow: 0 2px 3px 0 rgb(0 0 0 / 5%), 0 4px 12px 0 rgb(0 0 0 / 10%);
+}
+.w3-ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.w3-ul li {
+  padding: 8px 16px;
+  border-bottom: 1px solid #ddd;
+}
+.w3-bar {
+  width: 100%;
+  overflow: hidden;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+.w3-bar .w3-button {
+  white-space: normal;
+}
+.w3-bar .w3-bar-item {
+  padding: 8px 16px;
+  float: left;
+  width: auto;
+  border: none;
+  display: block;
+  outline: 0;
+}
+.w3-white, .w3-hover-white:hover {
+  color: #000!important;
+  /* background-color: #fff!important; */
+}
+.w3-right {
+  float: right!important;
+}
+.w3-xlarge {
+  font-size: 24px!important;
+}
+.w3-bar .w3-bar-item {
+  padding: 8px 16px;
+  float: left;
+  width: auto;
+  border: none;
+  display: block;
+  outline: 0;
+}
+.w3-circle {
+  border-radius: 50%;
+}
+.w3-bar .w3-bar-item {
+  padding: 8px 16px;
+  float: left;
+  width: auto;
+  border: none;
+  display: block;
+  outline: 0;
+}
+.w3-large {
+  font-size: 15px!important;
+  font-weight: bold !important;
+}
+.ant-list-lg .ant-list-item {
+  padding: 5px 0px !important;
+}
+.loginTopBar img{
+  display: none;
+}
+@media screen and (max-width: 991px){
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+  *{
+    font-family: 'Open Sans', sans-serif;
+  }
+  .ant-layout-header{
+    padding: 0px;
+    background: #4A1185 !important; 
+  }
+  .ant-card{
+    box-shadow: 0 2px 3px 0 rgb(0 0 0 / 5%), 0 4px 12px 0 rgb(0 0 0 / 10%);
+  }
+  .ant-card-body{
+    padding: 15px !important;
+  }
+  .ant-card-head{
+    padding: 0 15px !important;
+  }
+  .ant-card-head-title{
+    padding: 15px 0 !important;
+  }
+  .ant-layout-sider{
+    background: #4a1185 !important;
+    box-shadow: 0 2px 3px 0 rgb(0 0 0 / 5%), 0 4px 12px 0 rgb(0 0 0 / 10%);
+  }
+  .ant-menu.ant-menu-dark{
+    background: #4a1185 !important;
+  }
+  .ant-menu-item{
+    border-top: 1px solid #110220;
+    margin: 0 !important;
+  }
+  .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: #7d10ec !important;
+  }
+  .ant-layout-header{
+    box-shadow: 0 2px 3px 0 rgb(0 0 0 / 5%), 0 4px 12px 0 rgb(0 0 0 / 10%);
+  }
+  .ant-layout{
+    background: #fff !important;
+  }
+  .ant-list-split .ant-list-item, .ant-list-split.ant-list-something-after-last-item .ant-spin-container > .ant-list-items > .ant-list-item:last-child{
+    border: none !important;
+  }
+  .site-layout .site-layout-background {
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  .institute-name{
+    display: inline-block;
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+  }
+  .payment-fee-list{
+    background-color: #fff;
+  }
+  .payableWrapper{
+    padding: 20px;
+    text-align: center;
+    border-radius: 25px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: top right;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .ant-btn-primary{
+    background: #4D9706 !important;
+    border-color: #4D9706 !important;
+  }
+  /* .bg{
+    height: 124px;
+    width: 100%;
+    content: "";
+    background:url('images/total-box-bg.png');
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 25px;
+    background-size: 250px 123px;
+    background-repeat: no-repeat;
+    background-position: right;
+  } */
+  .bg::before{
+    
+  }
+  /* .totalPayable::after{
+    background-image: url("../../../1212.svg");
+    height: 200px;
+    width: 100%;
+    content: "";
+  } */
+  .totalPayableTitle{
+    color: #000;
+    font-size: 12px;
+    font-weight: 600;
+    position: relative;
+  }
+  .totalPayable{
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+  }
+  .totalPayableCount{
+    color: #000;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+  .box-shadow{
+    box-shadow: 0 2px 3px 0 rgb(0 0 0 / 5%), 0 4px 12px 0 rgb(0 0 0 / 10%);
+  }
+  .p-15{
+    padding: 15px;
+  }
+  .mb-sm-10{
+    margin-bottom: 10px !important;
+  }
+  .mb-sm-25{
+    margin-bottom: 25px !important;
+  }
+  .mb-sm-0{
+    margin-bottom: 0 !important;
+  }
+  .mb-10{
+    margin-bottom: 10px !important;
+  }
+  .mb-20{
+    margin-top: 20px !important;
+  }
+  .anticon-menu-unfold svg, .anticon-menu-fold svg{
+    font-size: 30px;
+    color: #fff;
+  }
+  .institute-name{
+    color: #fff;
+  }
+  .ant-menu-dark .ant-menu-item > span > a{
+    color: rgba(255, 255, 255, 1);
+  }
+  .mt-25{
+    margin-top: 25px;
+  }
+  .position-ralative{
+    position: relative;
+  }
+  .paymentDate {
+      position: absolute;
+      right: 13px;
+      top: 10px;
+  }
+  .paidAmount{
+    position: absolute;
+    right: 13px;
+    bottom: 10px;
+  }
+  .paidAmountx{
+    position: absolute;
+    right: 13px;
+    bottom: 10px;
+
+  }
+  .paidAmount span{
+    color: #0a8849;
+    font-size: 15px;
+  }
+  .ant-avatar{
+    margin-bottom: 15px !important;
+  }
+  footer{
+    padding: 15px 10px;
+    color: #afafaf;
+  }
+  .topUserImage{
+    margin-top: 18px !important;
+  }
+  .loginTopBar {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 7px 4px 0 rgb(0 0 0 / 10%);
+  }
+  .loginTopBar img{
+    display: block;
+    width: 100%;
+  }
+  .sonalibank-logo, .mujib-logo{
+    display: none;
+  }
+  .login-title{
+    display: none;
+  }
+  .ant-modal-header{
+    padding: 15px;
+  }
+  .ant-modal-body{
+    padding: 15px;
+  }
+  .ant-btn{
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 16px !important;
+    height: auto !important;
+    letter-spacing: 1px !important;
+  }
+}
+
+.ant-select-selection-selected-value {
+  border-radius: 0px 8px 8px 0px;
+  height: 53px;
+}
+.ant-col.ant-form-item-control .ant-select-multiple .ant-select-selector {
+  height: auto !important;
+  min-height: 40px !important;
+}
+.ant-select .ant-select-selector {
+  height: 40px !important;
+}
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+  height: 40px;
+}
+.otp input {
+  width: 3rem !important;
+  height: 3rem !important;
+  color: #000 !important;
+}
+.otp input:focus-visible {
+  background-color: transparent !important;
+  outline: #1890FF !important;
+  border: 1px solid #1890FF !important;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #ddd; 
+  border-radius: 1px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4D9706 ; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #376e04 ; 
+}
+.HpQrcode {
+  position: relative;
+}
+.qrd{
+  display: none;
+}
+
+.HpQrcode .qrd {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
