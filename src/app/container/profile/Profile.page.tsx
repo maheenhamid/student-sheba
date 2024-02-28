@@ -143,6 +143,9 @@ export default function Profile(props) {
         values.studentId = user?.studentId;
         values.instituteId = user?.instituteId;
         values.customStudentId = user?.customStudentId;
+        values.fatherPhotoSave = fatherPhotoFileContent !== null ? true : false;
+        values.motherPhotoSave = motherPhotoFileContent !== null ? true : false;
+
         updateStudentGuardianInfo(values);
         setUpdateGuardian(false);
         setfatherPhotoFileContent(null);
