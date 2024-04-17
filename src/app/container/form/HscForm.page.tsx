@@ -28,7 +28,7 @@ export default function HscForm(props) {
     };
 
     useEffect(() => {
-        reportList(user?.identificationId);
+        // reportList(user?.identificationId);
         fetchacademicYearList(user?.instituteId)
 
     }, [])
