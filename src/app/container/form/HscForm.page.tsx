@@ -11,6 +11,7 @@ export default function HscForm(props) {
     const loading = useStoreState(state => state.auth.loading)
     const reportData = useStoreState(state => state.auth.reportData)
     const reportList = useStoreActions(state => state.auth.reportList);
+    const fetchacademicYearList = useStoreActions((state) => state.auth.fetchacademicYearList);
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [modalItem, setmodalItem] = useState<any>(null);
 
@@ -27,7 +28,9 @@ export default function HscForm(props) {
     };
 
     useEffect(() => {
-        reportList(user?.identificationId)
+        reportList(user?.identificationId);
+        fetchacademicYearList(user?.instituteId)
+
     }, [])
 
     // console.log(tableData)
