@@ -245,6 +245,28 @@ export default function RenderLibrary(props) {
                                     <Col span={10}>
                                         <span className='details'> {user?.sectionName} </span>
                                     </Col>
+                                </Row>                               
+                                 <Row>
+                                    <Col span={10}>
+                                        <span className='title'> Group </span>
+                                    </Col>
+                                    <Col span={4}>
+                                        <span className='separator'> : </span>
+                                    </Col>
+                                    <Col span={10}>
+                                        <span className='details'> {user?.groupName} </span>
+                                    </Col>
+                                </Row>                                 
+                                <Row>
+                                    <Col span={10}>
+                                        <span className='title'> Roll </span>
+                                    </Col>
+                                    <Col span={4}>
+                                        <span className='separator'> : </span>
+                                    </Col>
+                                    <Col span={10}>
+                                        <span className='details'> {user?.studentRoll} </span>
+                                    </Col>
                                 </Row>
                             </Col>
                         </Row>
