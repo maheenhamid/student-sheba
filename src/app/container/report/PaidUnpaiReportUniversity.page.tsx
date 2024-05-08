@@ -110,7 +110,7 @@ const ComponentToPrint = React.forwardRef((props: any, ref: any) => {
                 <div>
                     {data?.semesterInfos?.map(item => <><div style={{ marginBottom: 5, marginTop: -10 }}>
                         <div style={{ textAlign: "center" }}>
-                            <h3>Semester: {item?.semesterName}</h3>
+                            <h3>Semester: {item?.semesterName} ...........  Student Type: {item?.studentType}</h3>
                         </div>
                     </div>
 

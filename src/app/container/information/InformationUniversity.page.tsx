@@ -110,6 +110,17 @@ export default function RenderLibrary(props) {
                                 </Row>
                                 <Row>
                                     <Col span={10}>
+                                        <span className='title'> Session </span>
+                                    </Col>
+                                    <Col span={4}>
+                                        <span className='separator'> : </span>
+                                    </Col>
+                                    <Col span={10}>
+                                        <span className='details'> {user?.session} </span>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col span={10}>
                                         <span className='title'> Class </span>
                                     </Col>
                                     <Col span={4}>
@@ -218,6 +229,17 @@ export default function RenderLibrary(props) {
                                     </Col>
                                     <Col span={10}>
                                         <span className='details'> {user?.motherName} </span>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col span={10}>
+                                        <span className='title'> Session </span>
+                                    </Col>
+                                    <Col span={4}>
+                                        <span className='separator'> : </span>
+                                    </Col>
+                                    <Col span={10}>
+                                        <span className='details'> {user?.session} </span>
                                     </Col>
                                 </Row>
                                 <Row>
