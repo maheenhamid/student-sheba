@@ -40,6 +40,10 @@ export const submitDataFinalBkash = (payload: any) => {
   return post("/public/get/baksh/fees-payment-url", payload);
 };
 
+export const submitDataFinalUpayPgw = (payload: any) => {
+  return post("/public/upay/pgw/init/request", payload);
+};
+
 export const delInvoice = (values: any) => {
   //console.group(auth)
   return del(

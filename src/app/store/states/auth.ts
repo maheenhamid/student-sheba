@@ -1,5 +1,5 @@
 import { Action, Thunk, thunk, action } from 'easy-peasy';
-import { login, collectionList, submitDataFinal, reportList, updateStudentProfileBasicInfo, updatData, updateStudentGuardianInfo, updateStudentAddressInfo, fetchDistrictList, fetchThanaList, saveStudentProfileUpdateToken, otpUsed, collectionListWithoutMonth, fetchpaidViews, fetchacademicYearList, collectionListAll, submitDataFinalBkash } from '../../http/auth';
+import { login, collectionList, submitDataFinal, reportList, updateStudentProfileBasicInfo, updatData, updateStudentGuardianInfo, updateStudentAddressInfo, fetchDistrictList, fetchThanaList, saveStudentProfileUpdateToken, otpUsed, collectionListWithoutMonth, fetchpaidViews, fetchacademicYearList, collectionListAll, submitDataFinalBkash, submitDataFinalUpayPgw } from '../../http/auth';
 import { loginUni, collectionListUni, submitDataFinalUni, reportListUni, updateStudentGuardianInfoUniversity, updatDataUni, updateStudentProfileBasicInfoUniversity, updateStudentPhotoUniversity, saveStudentProfileUpdateTokenUniversity, otpUsedSendUniversity, fetchpaidViewsUniversity, fetchExamList, fetchExamList2, fetchledgerList, submitDataFinalBkashUniversity, loginUniPassword, passwordChangeUni, resetStudentPassword, sendStudentPasswordRecoveryToken } from '../../http/authuni';
 import { message, notification } from 'antd';
 
@@ -33,6 +33,7 @@ export interface Auth {
 	submitDataFinalBkash: Thunk<Auth, any>;
 	submitDataFinalBkashUniversity: Thunk<Auth, any>;
 	updateStudentProfileBasicInfo: Thunk<Auth, any>;
+	submitDataFinalUpayPgw: Thunk<Auth, any>;
 	updateStudentProfileBasicInfoUniversity: Thunk<Auth, any>;
 	updateStudentPhotoUniversity: Thunk<Auth, any>;
 	updateStudentGuardianInfo: Thunk<Auth, any>;
@@ -579,6 +580,25 @@ export const authStore: Auth = {
 		} else {
 			message.error('Something Went Wrong');
 			//actions.loginFailed("Failed to login");
+			actions.stopLoading("stop");
+		}
+	}),
+
+	submitDataFinalUpayPgw: thunk(async (actions, payload) => {
+		actions.startLoading("start");
+		const response = await submitDataFinalUpayPgw(payload);
+		if (response.status === 201 || response.status === 200) {
+			const body = await response.json();
+			actions.stopLoading("stop");
+			if (body?.messageType === 1) {
+				let requestUrl = body?.item;
+				window.open(requestUrl, '_self');
+			} else {
+				message.error(body?.message);
+			}
+
+		} else {
+			message.error('Something Went Wrong');
 			actions.stopLoading("stop");
 		}
 	}),
