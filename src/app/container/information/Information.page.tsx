@@ -57,13 +57,21 @@ export default function RenderLibrary(props) {
         <>
             {
                 !mobileDisplay && <>
+                    <div>
+                        <div className="marquee">
+                            <p>জরুরি বিজ্ঞপ্তি...
+                                সেবা ডিজিটাল লিমিটেড এর সকল গ্রাহকদের অবগতির জন্য জানানো যাচ্ছে যে, সিস্টেম আপডেট ও পরিসেবার মানউন্নয়নের জন্য আগামী ২৭ জুন ২০২৪ বিকাল ৫ঃ০০ ঘটিকা হতে ২৯ জুন সকাল ৯ঃ০০ ঘটিকা পর্যন্ত সফটওয়্যারের যাবতীয় সকল অনলাইন লেনদেনের সেবা সমূহ বন্ধ থাকিবে।
+                                সাময়িক অসুবিধার জন্য আমরা আন্তরিক ভাবে দুঃখিত।
+                            </p>
+                        </div>
+                    </div>
                     <Card title="Student Information">
                         <Row className='info-wrapper'>
                             <Col xs={24} sm={24} md={24} lg={24} xl={8}>
                                 <Row>
                                     <Col span={4}>
                                         <Avatar
-                                            src={ user?.studentImageLink}
+                                            src={user?.studentImageLink}
                                             size={{ xs: 100, sm: 100, md: 100, lg: 100, xl: 100, xxl: 100 }}
                                             className="pointer topUserImage"
                                         />
@@ -165,7 +173,14 @@ export default function RenderLibrary(props) {
             {
                 mobileDisplay &&
                 <div className="mt-25 mb-sm-25">
-
+                    <div>
+                        <div className="marquee">
+                            <p>জরুরি বিজ্ঞপ্তি...
+                                সেবা ডিজিটাল লিমিটেড এর সকল গ্রাহকদের অবগতির জন্য জানানো যাচ্ছে যে, সিস্টেম আপডেট ও পরিসেবার মানউন্নয়নের জন্য আগামী ২৭ জুন ২০২৪ বিকাল ৫ঃ০০ ঘটিকা হতে ২৯ জুন সকাল ৯ঃ০০ ঘটিকা পর্যন্ত সফটওয়্যারের যাবতীয় সকল অনলাইন লেনদেনের সেবা সমূহ বন্ধ থাকিবে।
+                                সাময়িক অসুবিধার জন্য আমরা আন্তরিক ভাবে দুঃখিত।
+                            </p>
+                        </div>
+                    </div>
                     <Card title="Student Information" >
                         <Row className='info-wrapper'>
                             <Col xs={24} sm={24} md={8} lg={8} xl={8}>
@@ -245,8 +260,8 @@ export default function RenderLibrary(props) {
                                     <Col span={10}>
                                         <span className='details'> {user?.sectionName} </span>
                                     </Col>
-                                </Row>                               
-                                 <Row>
+                                </Row>
+                                <Row>
                                     <Col span={10}>
                                         <span className='title'> Group </span>
                                     </Col>
@@ -256,7 +271,7 @@ export default function RenderLibrary(props) {
                                     <Col span={10}>
                                         <span className='details'> {user?.groupName} </span>
                                     </Col>
-                                </Row>                                 
+                                </Row>
                                 <Row>
                                     <Col span={10}>
                                         <span className='title'> Roll </span>
