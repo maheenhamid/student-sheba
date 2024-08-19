@@ -17,6 +17,7 @@ export default function Payment(props) {
     const authenticateUniversity = useStoreActions(state => state.auth.authenticateUniversity2);
     const authenticateUniversityPassword = useStoreActions(state => state.auth.authenticateUniversityPassword);
     const submitDataBkash = useStoreActions(state => state.auth.submitDataFinalBkashUniversity);
+    const submitDataUpayPgw = useStoreActions(state => state.auth.submitDataFinalForUpayPgwUniversity);
 
     useEffect(() => {
         let password = localStorage.getItem("password");
@@ -104,16 +105,7 @@ export default function Payment(props) {
             dataIndex: 'feeAmount',
             key: 'feeAmount',
         },
-        // {
-        //     title: 'Waiver Name',
-        //     dataIndex: 'waiverName',
-        //     key: 'waiverName',
-        // }, 
-        // {
-        //     title: 'Waiver Amount',
-        //     dataIndex: 'waiverAmount',
-        //     key: 'waiverAmount',
-        // }, 
+   
     ];
 
     const columns2 = [
@@ -163,15 +155,7 @@ export default function Payment(props) {
                 "waiverId": null,
             }
         });
-        // let details = tableData.map(function (item) {
-        //     return {
-        //         "feeAmount": item?.feeAmount,
-        //         "feeHeadId": item?.feeHeadId,
-        //         "feeSubHeadId": item?.feeSubHeadId,
-        //         "waiverAmount": item?.waiverAmount,
-        //         "waiverId": item?.feeWaiverId
-        //     }
-        // });
+
 
 
         let postData: any = {
@@ -179,10 +163,16 @@ export default function Payment(props) {
             serviceCharge: serviceCharge,
             details: details
         };
+        
         if (user?.ofpsType==="bkash"){
             submitDataBkash(postData)
-        } else {
+        } 
+        else if (user?.ofpsType==="sonalibank"){
             submitDataFinalUni(postData)
+        }
+
+        else if (user?.ofpsType==="upaypgw"){
+            submitDataUpayPgw(postData)
         }
     }
 
