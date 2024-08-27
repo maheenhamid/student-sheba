@@ -12,6 +12,7 @@ import Report from './container/report/Report.page';
 import ResultPage from './container/result/Result.page';
 import Profile from './container/profile/Profile.page';
 import HscForm from './container/form/HscForm.page';
+import MarkSheet from './container/report/MarkSheet.page';
 import Icon, { MenuFoldOutlined, MenuUnfoldOutlined, PhoneOutlined } from '@ant-design/icons';
 import RightSidebar from './rightSidebar';
 
@@ -157,6 +158,7 @@ export default function Container() {
 						<Route exact path="/bkash" component={Bkash} />
 						<Route exact path="/report" component={Report} />
 						<Route exact path="/result" component={ResultPage} />
+						<Route exact path="/marksheet" component={MarkSheet} />
 						<Route exact path="/hsc-form" component={HscForm} />
 						<Route exact path="/profile" component={Profile} />
 						{/* <Route exact path="/calendar" component={Calendar} /> */}
