@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.81c6c769.css",
+    "main.js": "/static/js/main.67e489f5.js",
+    "static/js/422.5a2798d7.chunk.js": "/static/js/422.5a2798d7.chunk.js",
+    "static/media/sidebar-photo-call-center.svg": "/static/media/sidebar-photo-call-center.be7a81e7f81bbaa32eda4d3e1e856237.svg",
+    "static/media/customer-service-icon.svg": "/static/media/customer-service-icon.d1ceb45e72eeb125f38379f86a16dd9f.svg",
+    "static/media/hand-shake.svg": "/static/media/hand-shake.b03e7bf05566305d3fd8e04918cf161b.svg",
+    "static/media/login-banner-image.png": "/static/media/login-banner-image.8655b16be974ee23f5fe.png",
+    "static/media/profile.png": "/static/media/profile.ac67ecae3257077acdce.png",
+    "static/media/login-bottom-bg.png": "/static/media/login-bottom-bg.a1070f5dd14ea49be313.png",
+    "static/media/student-sheba-logo.svg": "/static/media/student-sheba-logo.788344db2497a120f45eba7edfba8143.svg",
+    "static/media/login-mobile.png": "/static/media/login-mobile.f644612922804f751305.png",
+    "static/media/google-play-badge.svg": "/static/media/google-play-badge.903c5d5821b0ea694ef83d32c8a18893.svg",
+    "index.html": "/index.html",
+    "main.81c6c769.css.map": "/static/css/main.81c6c769.css.map",
+    "main.67e489f5.js.map": "/static/js/main.67e489f5.js.map",
+    "422.5a2798d7.chunk.js.map": "/static/js/422.5a2798d7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.81c6c769.css",
+    "static/js/main.67e489f5.js"
+  ]
+}
