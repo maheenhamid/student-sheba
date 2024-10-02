@@ -17,6 +17,7 @@ export default function Payment(props) {
     const authenticateUniversity = useStoreActions(state => state.auth.authenticateUniversity2);
     const authenticateUniversityPassword = useStoreActions(state => state.auth.authenticateUniversityPassword);
     const submitDataBkash = useStoreActions(state => state.auth.submitDataFinalBkashUniversity);
+    const submitDataUpayPgw = useStoreActions(state => state.auth.submitDataFinalForUpayPgwUniversity);
 
     useEffect(() => {
         let password = localStorage.getItem("password");
@@ -42,7 +43,10 @@ export default function Payment(props) {
     }
     const [selectedRowKeys, setselectedRowKeys] = useState<any>([])
     const [pageTableData, setpageTableData] = useState<any>([])
+    const [indeterminateSelected, setindeterminateSelected] = useState<any>(false)
+    const [allselected, setallselected] = useState<any>(true)
     const [submitTableData, setsubmitTableData] = useState<any>([])
+    const [viewData, setviewData] = useState<any>([])
     const [totalPayable, settotalPayable] = useState<any>(0)
     const [identificationId, setidentificationId] = useState<any>(0)
     const [showcharge, setshowcharge] = useState<any>(0)
@@ -68,6 +72,7 @@ export default function Payment(props) {
         let totalPayAbleVal = tableData?.feesList?.map(item => item.feeAmount).reduce((prev, curr) => prev + curr, 0);
         settotalPayable(totalPayAbleVal)
         setsubmitTableData(tableData?.feesList)
+        setviewData(tableData?.feesList)
         let temp: any = []
         for (let i = 0; i < tableData?.feesList?.length; i++) {
             temp.push(i)
@@ -100,16 +105,7 @@ export default function Payment(props) {
             dataIndex: 'feeAmount',
             key: 'feeAmount',
         },
-        // {
-        //     title: 'Waiver Name',
-        //     dataIndex: 'waiverName',
-        //     key: 'waiverName',
-        // }, 
-        // {
-        //     title: 'Waiver Amount',
-        //     dataIndex: 'waiverAmount',
-        //     key: 'waiverAmount',
-        // }, 
+   
     ];
 
     const columns2 = [
@@ -159,15 +155,7 @@ export default function Payment(props) {
                 "waiverId": null,
             }
         });
-        // let details = tableData.map(function (item) {
-        //     return {
-        //         "feeAmount": item?.feeAmount,
-        //         "feeHeadId": item?.feeHeadId,
-        //         "feeSubHeadId": item?.feeSubHeadId,
-        //         "waiverAmount": item?.waiverAmount,
-        //         "waiverId": item?.feeWaiverId
-        //     }
-        // });
+
 
 
         let postData: any = {
@@ -175,14 +163,62 @@ export default function Payment(props) {
             serviceCharge: serviceCharge,
             details: details
         };
+        
         if (user?.ofpsType==="bkash"){
             submitDataBkash(postData)
-        } else {
+        } 
+        else if (user?.ofpsType==="sonalibank"){
             submitDataFinalUni(postData)
+        }
+
+        else if (user?.ofpsType==="upaypgw"){
+            submitDataUpayPgw(postData)
         }
     }
 
-    const mobileSelect = (e, item) => {
+    const mobileSelectAll = (e) => {
+        setindeterminateSelected(false)
+        let temp:any = [];
+
+            temp = viewData?.map(item=>{
+                return {
+                        "feeHeadId": item?.feeHeadId,
+                        "feeHeadName": item?.feeHeadName,
+                        "waiverAmount": item?.waiverAmount,
+                        "waiverId": item?.waiverId,
+                        "waiverName": item?.waiverName,
+                        "feeAmount": item?.feeAmount,
+                        "selected" : !allselected
+                }
+            })
+            setallselected(!allselected)
+            setviewData(temp)
+            setsubmitTableData(allselected?[]:temp)
+            let totalPayAbleVal = temp
+                .map(item => item?.feeAmount)
+                .reduce((prev, curr) => prev + curr, 0);
+            settotalPayable(allselected?0:totalPayAbleVal)
+
+        }
+
+
+    const mobileSelect = (e, item, index) => {
+        const newData: any = [...viewData];
+        newData[index]['selected']= e;
+        let newdatalen= newData?.filter(item=>item?.selected==true)?.length;
+        let viewdatalen= viewData?.length;
+        if (viewdatalen===newdatalen){
+            setallselected(true);
+            setindeterminateSelected(false);
+        } else if (newdatalen<viewdatalen && newdatalen!=0){
+            setallselected(false);
+            setindeterminateSelected(true);
+        } else if (newdatalen===0){
+            setallselected(false);
+            setindeterminateSelected(false);
+        }
+        setviewData(newData)
+
         let temp;
         if (e) {
             temp = [...submitTableData, item]
@@ -200,10 +236,9 @@ export default function Payment(props) {
                 .map(item => item.feeAmount)
                 .reduce((prev, curr) => prev + curr, 0);
             settotalPayable(totalPayAbleVal)
-
         }
-
     }
+
 
     return (
         <>
@@ -258,12 +293,21 @@ export default function Payment(props) {
                                         isMobile ?
                                             <List
                                                 itemLayout="vertical"
-                                                dataSource={tableData?.feesList}
+                                                dataSource={viewData}
                                                 size="large"
                                                 pagination={false}
+                                                header={<div style={{ display: "flex", justifyItems: "center", alignContent: "center", alignItems: 'center' }}>
+                                                <div>
+                                                    <Checkbox disabled={user?.onlineFeesCheckOption===0?true:false} indeterminate={indeterminateSelected} checked={allselected} onChange={(e) => mobileSelectAll(e.target.checked)}  ></Checkbox>
+                                                </div>
+                                                <div style={{ marginLeft: 10, fontWeight: 'bold' }}>
+                                                    Select All
+                                                </div>
 
+                                            </div>
+                                            }
 
-                                                renderItem={(item: any) => (
+                                                renderItem={(item: any, index:any) => (
                                                     <List.Item key={item.key}>
                                                         <ul className="w3-ul w3-card-4 payment-fee-list">
                                                             <li className="w3-bar">
@@ -271,7 +315,7 @@ export default function Payment(props) {
                                                                 <div className="w3-bar-item">
                                                                     <div style={{ display: "flex", justifyItems: "center", alignContent: "center", alignItems: 'center' }}>
                                                                         <div>
-                                                                            <Checkbox disabled={user?.onlineFeesCheckOption===0?true:false} defaultChecked onChange={(e) => mobileSelect(e.target.checked, item)} ></Checkbox>
+                                                                            <Checkbox disabled={user?.onlineFeesCheckOption===0?true:false} checked={item?.selected} onChange={(e) => mobileSelect(e.target.checked, item, index)} ></Checkbox>
                                                                         </div>
                                                                         <div style={{ marginLeft: 5 }}>
                                                                             <span style={{ fontWeight: "bold" }}>{item?.feeHeadName}</span><br />

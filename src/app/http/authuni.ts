@@ -98,6 +98,6 @@ export const fetchExamList = (payload) => get(`/public/initial-setup/exam/list?i
 export const fetchExamList2 = (payload) => get(`/public/initial-setup/exam/list/by/student-id?instituteId=${payload?.instituteId}&studentId=${payload.studentId}`);
 export const fetchledgerList = (payload) => get(`/public/single-student/paid-unpaid/view?customStudentId=${payload?.customStudentId}&instituteId=${payload.instituteId}`);
 
-export const submitDataFinalBkashUniversity = (payload: any) => {
-  return post("/public/get/baksh/fees-payment-url", payload);
-};
+export const submitDataFinalBkashUniversity = (payload: any) => {return post("/public/get/baksh/fees-payment-url", payload);};
+
+export const submitDataForUpayPgwUniversity = (payload: any) => {return post("/public/upay/pgw/init/request", payload)};

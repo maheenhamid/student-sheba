@@ -57,13 +57,18 @@ export default function RenderLibrary(props) {
         <>
             {
                 !mobileDisplay && <>
+                    <div>
+                        <div className="marquee">
+                            <p>Customer Support Call: 09610912912, 01951901919, 01941901919 </p>
+                        </div>
+                    </div>
                     <Card title="Student Information">
                         <Row className='info-wrapper'>
                             <Col xs={24} sm={24} md={24} lg={24} xl={8}>
                                 <Row>
                                     <Col span={4}>
                                         <Avatar
-                                            src={ user?.studentImageLink}
+                                            src={user?.studentImageLink}
                                             size={{ xs: 100, sm: 100, md: 100, lg: 100, xl: 100, xxl: 100 }}
                                             className="pointer topUserImage"
                                         />
@@ -165,7 +170,11 @@ export default function RenderLibrary(props) {
             {
                 mobileDisplay &&
                 <div className="mt-25 mb-sm-25">
-
+                    <div>
+                        <div className="marquee">
+                            <p>Customer Support Call: 09610912912, 01951901919, 01941901919 </p>
+                        </div>
+                    </div>
                     <Card title="Student Information" >
                         <Row className='info-wrapper'>
                             <Col xs={24} sm={24} md={8} lg={8} xl={8}>
@@ -244,6 +253,28 @@ export default function RenderLibrary(props) {
                                     </Col>
                                     <Col span={10}>
                                         <span className='details'> {user?.sectionName} </span>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col span={10}>
+                                        <span className='title'> Group </span>
+                                    </Col>
+                                    <Col span={4}>
+                                        <span className='separator'> : </span>
+                                    </Col>
+                                    <Col span={10}>
+                                        <span className='details'> {user?.groupName} </span>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col span={10}>
+                                        <span className='title'> Roll </span>
+                                    </Col>
+                                    <Col span={4}>
+                                        <span className='separator'> : </span>
+                                    </Col>
+                                    <Col span={10}>
+                                        <span className='details'> {user?.studentRoll} </span>
                                     </Col>
                                 </Row>
                             </Col>

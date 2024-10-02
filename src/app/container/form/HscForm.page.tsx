@@ -2,6 +2,7 @@ import { CalendarOutlined, DownCircleOutlined, DownloadOutlined, LoadingOutlined
 import { Form, Row, Select, Col, Button, Table, Result, Spin, Tooltip, List, Card, Modal } from 'antd';
 import React, { useEffect, useState } from 'react'
 import { useStoreActions, useStoreState } from '../../store/hooks/easyPeasy';
+import { SelectAcademicYear } from '../profile/SelectAcademicYear';
 
 
 export default function HscForm(props) {
@@ -10,8 +11,11 @@ export default function HscForm(props) {
     const loading = useStoreState(state => state.auth.loading)
     const reportData = useStoreState(state => state.auth.reportData)
     const reportList = useStoreActions(state => state.auth.reportList);
+    const fetchacademicYearList = useStoreActions((state) => state.auth.fetchacademicYearList);
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [modalItem, setmodalItem] = useState<any>(null);
+
+    const [form] = Form.useForm();
 
     const handleOk = () => {
         setIsModalVisible(false);
@@ -24,7 +28,9 @@ export default function HscForm(props) {
     };
 
     useEffect(() => {
-        reportList(user?.identificationId)
+        // reportList(user?.identificationId);
+        fetchacademicYearList(user?.instituteId)
+
     }, [])
 
     // console.log(tableData)
@@ -32,7 +38,17 @@ export default function HscForm(props) {
     if (
         /iP(hone|od)|android.+mobile|BlackBerry|IEMobile/i.test(navigator.userAgent)
     ) {
-        mobileDisplay = true;
+        mobileDisplay = false;
+    }
+
+
+    const onFinish = (values: any) => {
+        let payload: any = {
+            academicYear:values?.year,
+            instituteId:user?.instituteId,
+            studentId:user?.studentId,
+        }
+        reportList(payload)
     }
     const columns = [
         {
@@ -78,9 +94,39 @@ export default function HscForm(props) {
 
     //console.log(reportData)
 
+    https://api.shebashikkha.com/public/fees-payment/invoice-fee/list?academicYear=undefined&instituteId=undefined&studentId=undefined
 
     return (
         <div className="mt-25 mb-sm-25">
+
+<Card title="Fee Report" className='custom-card-view'>
+                <Form layout="vertical" onFinish={onFinish} id='create-class' form={form} className="mb-sm-25" >
+                    <Row gutter={15}>
+                        <Col xs={24} sm={24} md={24} lg={4} xl={4}></Col>
+                        <Col xs={24} sm={24} md={24} lg={8} xl={8}>
+
+                            <Form.Item
+                                name="year"
+                                label="Year:"
+                                className="title-Text custon-form-wrapper"
+                                rules={[
+                                    { required: true, message: "Please Select Year" },
+                                ]}
+                            >
+                                <SelectAcademicYear />
+                            </Form.Item>
+                        </Col>
+                        <Col xs={24} sm={24} md={24} lg={8} xl={8}>
+                            <Form.Item className="mb-sm-0">
+                                <Button type="primary" className="success-button" htmlType="submit" style={{ marginTop: mobileDisplay ? 0 : 30, width: "100%", padding: 10 }}>
+                                    Search
+                                </Button>
+                            </Form.Item>
+                        </Col>
+                    </Row>
+                </Form>
+
+            </Card>
 
             <div className="loading" style={{ display: loading ? "inherit" : "none" }}> <Spin indicator={antIcon} /></div>
             {reportData.length > 0 ?

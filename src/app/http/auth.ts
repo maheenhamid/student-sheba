@@ -40,6 +40,10 @@ export const submitDataFinalBkash = (payload: any) => {
   return post("/public/get/baksh/fees-payment-url", payload);
 };
 
+export const submitDataFinalUpayPgw = (payload: any) => {
+  return post("/public/upay/pgw/init/request", payload);
+};
+
 export const delInvoice = (values: any) => {
   //console.group(auth)
   return del(
@@ -88,4 +92,8 @@ export const otpUsed = (payload) => get(`/public/student/otp/use?instituteId=${p
 
 export const fetchacademicYearList = (id) => get(`/public/academic-year/list?instituteId=${id}`);
 
+export const fetchsingleStudentMarkView = (payload: any) => {
+  return post("/public/single/student/mark/view", payload);
+};
+export const fetchPublicExamList = (id) => get(`/public/exam/list?instituteId=${id}`);
 
