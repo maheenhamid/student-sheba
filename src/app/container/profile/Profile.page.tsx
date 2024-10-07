@@ -162,8 +162,24 @@ export default function Profile(props) {
         setupdateAddress(false);
     }
 
+    function downloadStudentIdCard() {
+        
+        var identificationId = user?.identificationId;
+        var instituteId = user?.instituteId;
+            
+/////https://api.shebashikkha.com/public/student/id-card/download?identificationId=750996
+        //const API_BASE = process.env.REACT_APP_API_ROOT
+        window.open(`${process.env.REACT_APP_API_ROOT}/public/student/id-card/download?identificationId=${identificationId}&instituteId=${instituteId}`, '_blank');
+
+    }
+    
+
     const updateNumber = (value) => {
         // console.log(value);
+    }
+
+    const idcardDownload = () => {
+        downloadStudentIdCard();
     }
 
     const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
@@ -1009,12 +1025,18 @@ export default function Profile(props) {
                                                 </Row>
                                             }
                                         </Form>
+
+                                        <Button type="primary" className='success-button' onClick={() => idcardDownload()} style={{ height: 40, right: 0 }}>
+                                        Download Your ID Card
+                                        </Button>
                                     </Col>
                                 </Row>
                             </Card>
                         }
                     </Col>
                 </Row>
+
+              
             </Card>
             <Modal title="OTP Code"
                 visible={isModalVisible}
