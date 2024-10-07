@@ -52,6 +52,11 @@ export default function RenderLibrary(props) {
             {
                 !mobileDisplay && <>
                     <br />
+                    <div>
+                        <div className="marquee">
+                            <p>Customer Support Call: 09610912912, 01951901919, 01941901919 </p>
+                        </div>
+                    </div>
                     <Card title="Student Information">
                         <Row className='info-wrapper'>
                             <Col xs={24} sm={24} md={24} lg={24} xl={8}>
@@ -172,7 +177,14 @@ export default function RenderLibrary(props) {
             {
                 mobileDisplay &&
                 <div className="mt-25 mb-sm-25">
-
+                    <div>
+                        <div className="marquee">
+                            <p>জরুরি বিজ্ঞপ্তি...
+                                সেবা ডিজিটাল লিমিটেড এর সকল গ্রাহকদের অবগতির জন্য জানানো যাচ্ছে যে, সিস্টেম আপডেট ও পরিসেবার মানউন্নয়নের জন্য আগামী ২৭ জুন ২০২৪ বিকাল ৫ঃ০০ ঘটিকা হতে ২৯ জুন সকাল ৯ঃ০০ ঘটিকা পর্যন্ত সফটওয়্যারের যাবতীয় সকল অনলাইন লেনদেনের সেবা সমূহ বন্ধ থাকিবে।
+                                সাময়িক অসুবিধার জন্য আমরা আন্তরিক ভাবে দুঃখিত।
+                            </p>
+                        </div>
+                    </div>
                     <Card title="Student Information" >
                         <Row className='info-wrapper'>
                             <Col xs={24} sm={24} md={8} lg={8} xl={8}>

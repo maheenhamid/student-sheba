@@ -88,6 +88,36 @@ export default function SubjectChoiceUniversity(props) {
 
     ];
 
+    const columns3 = [
+        {
+            title: 'Department',
+            dataIndex: 'department',
+            key: 'department',
+        },
+        
+        {
+            title: 'Code',
+            dataIndex: 'code',
+            key: 'code',
+        },
+        {
+            title: 'Subject',
+            dataIndex: 'subjectName',
+            key: 'subjectName',
+        },
+        {
+            title: 'Theoratical Credit',
+            dataIndex: 'theoryCredit',
+            key: 'theoryCredit',
+        },
+        {
+            title: 'Practical Credit',
+            dataIndex: 'practicalCredit',
+            key: 'practicalCredit',
+        },
+
+    ];
+
     const onSaveSubject = () => {
         if (selectedRowKeys?.length === 0) {
             notification.error({ message: "Please select subject" });
@@ -138,6 +168,7 @@ export default function SubjectChoiceUniversity(props) {
         }, 0);
 
         var col = [
+            "Department",
             "Subject Code",
             "Subject",
             "Theoratical Credit",
@@ -148,6 +179,7 @@ export default function SubjectChoiceUniversity(props) {
 
         studentSubjectListForAssign?.studentAssignedSubjectList?.forEach(element => {
             var temp: any = [
+                element.department,
                 element.code,
                 element.subjectName,
                 element.theoryCredit,
@@ -163,7 +195,7 @@ export default function SubjectChoiceUniversity(props) {
         ], [
             {
                 b1: "Name",
-                b2: user?.studentName,
+                b2: studentSubjectListForAssign?.studentName,
             }
         ], {
             startY: 45,
@@ -179,13 +211,14 @@ export default function SubjectChoiceUniversity(props) {
                 },
             }
         });
+
         doc.autoTable([
             { title: "", dataKey: "b1" },
             { title: "", dataKey: "b2" },
         ], [
             {
-                b1: "Student Id",
-                b2: user?.customStudentId,
+                b1: "Student ID",
+                b2: studentSubjectListForAssign?.customStudentId,
             }
         ], {
             startY: doc.autoTable.previous.finalY + 0,
@@ -201,6 +234,32 @@ export default function SubjectChoiceUniversity(props) {
                 },
             }
         });
+
+
+        doc.autoTable([
+            { title: "", dataKey: "b1" },
+            { title: "", dataKey: "b2" },
+        ], [
+            {
+                b1: "Term of Admission",
+                b2: studentSubjectListForAssign?.termOfAdmission,
+            }
+        ], {
+            startY: doc.autoTable.previous.finalY + 0,
+            showHeader: "never",
+            theme: 'grid',
+            columnStyles: {
+                b1: {
+                    columnWidth: 80,
+                    fontStyle: 'bold'
+                },
+                b2: {
+                    columnWidth: 102,
+                },
+            }
+        });
+
+
         doc.autoTable([
             { title: "", dataKey: "b1" },
             { title: "", dataKey: "b2" },
@@ -223,13 +282,14 @@ export default function SubjectChoiceUniversity(props) {
                 },
             }
         });
+        
         doc.autoTable([
             { title: "", dataKey: "b1" },
             { title: "", dataKey: "b2" },
         ], [
             {
-                b1: "Class Department",
-                b2: user?.classDepartment,
+                b1: "Program Department",
+                b2: studentSubjectListForAssign?.programDepartment,
             }
         ], {
             startY: doc.autoTable.previous.finalY + 0,
@@ -245,13 +305,14 @@ export default function SubjectChoiceUniversity(props) {
                 },
             }
         });
+        
         doc.autoTable([
             { title: "", dataKey: "b1" },
             { title: "", dataKey: "b2" },
         ], [
             {
-                b1: "Semester Year",
-                b2: $(".semYear").text(),
+                b1: "Term of Enrollment",
+                b2: studentSubjectListForAssign?.semesterYearName,
             }
         ], {
             startY: doc.autoTable.previous.finalY + 0,
@@ -267,14 +328,13 @@ export default function SubjectChoiceUniversity(props) {
                 },
             }
         });
+        
+        
         doc.autoTable(col, rows, {
             startY: doc.autoTable.previous.finalY + 5,
             showHeader: "firstPage",
             theme: 'grid',
             headerStyles: {
-                // fillColor: [105, 105, 105],
-                // textColor: [255, 255, 255],
-                // fontSize: 10
                 lineWidth: .01,
                 overflow: 'linebreak',
                 lineColor: [224, 224, 224]
@@ -285,19 +345,23 @@ export default function SubjectChoiceUniversity(props) {
             columnStyles: {
                 0: {
                     halign: "left",
-                    columnWidth: 20
+                    columnWidth: 30
                 },
                 1: {
                     halign: "left",
-                    columnWidth: 65
+                    columnWidth: 30
                 },
                 2: {
-                    halign: "right",
-                    columnWidth: 48.4
+                    halign: "left",
+                    columnWidth: 73
                 },
                 3: {
-                    halign: "right",
-                    columnWidth: 48.4
+                    halign: "center",
+                    columnWidth: 24.4
+                },
+                4: {
+                    halign: "center",
+                    columnWidth: 24.4
                 }
             },
         });
@@ -305,6 +369,7 @@ export default function SubjectChoiceUniversity(props) {
             { title: "", dataKey: "b1" },
             { title: "", dataKey: "b2" },
             { title: "", dataKey: "b3" },
+            
         ], [
             {
                 b1: "Total",
@@ -317,18 +382,19 @@ export default function SubjectChoiceUniversity(props) {
             theme: 'grid',
             columnStyles: {
                 b1: {
-                    columnWidth: 85,
+                    columnWidth: 133,
                     
                     fontStyle: 'bold'
                 },
                 b2: {
-                    columnWidth: 48.4,
-                    halign: "right",
+                    columnWidth: 24.4,
+                    halign: "center",
                 },
                 b3: {
-                    columnWidth: 48.4,
-                    halign: "right",
+                    columnWidth: 24.4,
+                    halign: "center",
                 },
+            
             }
         });
 
@@ -408,7 +474,7 @@ export default function SubjectChoiceUniversity(props) {
                                     <Table
                                         bordered={true}
                                         dataSource={studentSubjectListForAssign?.studentAssignedSubjectList}
-                                        columns={columns2}
+                                        columns={columns3}
                                         rowKey='assignId'
                                         pagination={false}
                                     />

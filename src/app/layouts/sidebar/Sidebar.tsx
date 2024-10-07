@@ -34,6 +34,8 @@ export function Sidebar(props: any) {
 			setpathValue("5")
 		} else if (window.location.pathname == '/hsc-form') {
 			setpathValue("7")
+		} else if (window.location.pathname == '/marksheet') {
+			setpathValue("889")
 		} else if (window.location.pathname == '/admit-card') {
 			setpathValue("12")
 		} else if (window.location.pathname == '/subject-choice') {
@@ -72,6 +74,10 @@ export function Sidebar(props: any) {
 				{checkType === 'school' ?
 					<Menu.Item key="7" icon={<FileTextOutlined />} >
 						<Link to="/hsc-form" className="nav-text">HSC Form</Link>
+					</Menu.Item> : null}
+				{checkType === 'school' ?
+					<Menu.Item key="889" icon={<FileTextOutlined />} >
+						<Link to="/marksheet" className="nav-text">Marksheet</Link>
 					</Menu.Item> : null}
 				{checkType === 'school' && user?.onlineProfileUpdateStatus === 1 &&
 					<Menu.Item key="5" icon={<UserOutlined />} >
