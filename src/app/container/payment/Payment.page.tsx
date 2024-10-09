@@ -20,6 +20,7 @@ export default function Payment(props) {
     const fetchpaidViews = useStoreActions(state => state.auth.fetchpaidViews);
     const submitDataFinal = useStoreActions(state => state.auth.submitDataFinal);
     const submitDataBkash = useStoreActions(state => state.auth.submitDataFinalBkash);
+    const submitDataForSSL = useStoreActions(state => state.auth.submitDataFinalForSSL);
     const submitDataUpayPgw = useStoreActions(state => state.auth.submitDataFinalUpayPgw);
     const fetchacademicYearList = useStoreActions((state) => state.auth.fetchacademicYearList);
     const [form] = Form.useForm();
@@ -189,6 +190,8 @@ export default function Payment(props) {
             submitDataBkash(postData)
         } else if (user?.ofpsType==="upaypgw"){
             submitDataUpayPgw(postData)
+        }else if (user?.ofpsType==="ssl"){
+            submitDataForSSL(postData)
         } else {
             submitDataFinal(postData)
         }

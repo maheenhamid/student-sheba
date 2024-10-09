@@ -40,6 +40,10 @@ export const submitDataFinalBkash = (payload: any) => {
   return post("/public/get/baksh/fees-payment-url", payload);
 };
 
+export const submitDataFinalSSL = (payload: any) => {
+  return post("/public/get/online-fees-payment/ssl/gateway-url", payload);
+};
+
 export const submitDataFinalUpayPgw = (payload: any) => {
   return post("/public/upay/pgw/init/request", payload);
 };
