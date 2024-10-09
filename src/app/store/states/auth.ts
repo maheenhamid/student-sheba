@@ -1,5 +1,5 @@
 import { Action, Thunk, thunk, action } from 'easy-peasy';
-import { login, collectionList, submitDataFinal, reportList, updateStudentProfileBasicInfo, updatData, updateStudentGuardianInfo, updateStudentAddressInfo, fetchDistrictList, fetchThanaList, saveStudentProfileUpdateToken, otpUsed, collectionListWithoutMonth, fetchpaidViews, fetchacademicYearList, collectionListAll, submitDataFinalBkash, submitDataFinalUpayPgw, fetchPublicExamList, fetchsingleStudentMarkView } from '../../http/auth';
+import { login, collectionList, submitDataFinal, reportList, updateStudentProfileBasicInfo, updatData, updateStudentGuardianInfo, updateStudentAddressInfo, fetchDistrictList, fetchThanaList, saveStudentProfileUpdateToken, otpUsed, collectionListWithoutMonth, fetchpaidViews, fetchacademicYearList, collectionListAll, submitDataFinalBkash, submitDataFinalUpayPgw, fetchPublicExamList, fetchsingleStudentMarkView, submitDataFinalSSL } from '../../http/auth';
 import { loginUni, collectionListUni, submitDataFinalUni, reportListUni, updateStudentGuardianInfoUniversity, updatDataUni, updateStudentProfileBasicInfoUniversity, updateStudentPhotoUniversity, saveStudentProfileUpdateTokenUniversity, otpUsedSendUniversity, fetchpaidViewsUniversity, fetchExamList, fetchExamList2, fetchledgerList, submitDataFinalBkashUniversity, loginUniPassword, passwordChangeUni, resetStudentPassword, sendStudentPasswordRecoveryToken, submitDataForUpayPgwUniversity } from '../../http/authuni';
 import { message, notification } from 'antd';
 
@@ -32,6 +32,7 @@ export interface Auth {
 	submitDataFinal: Thunk<Auth, any>;
 	submitDataFinalBkash: Thunk<Auth, any>;
 	submitDataFinalBkashUniversity: Thunk<Auth, any>;
+	submitDataFinalForSSL: Thunk<Auth, any>;
 	submitDataFinalForUpayPgwUniversity: Thunk<Auth, any>;
 	updateStudentProfileBasicInfo: Thunk<Auth, any>;
 	submitDataFinalUpayPgw: Thunk<Auth, any>;
@@ -567,6 +568,7 @@ export const authStore: Auth = {
 		}
 	}),
 
+
 	submitDataFinalBkashUniversity: thunk(async (actions, payload) => {
 		//console.log(payload)
 		actions.startLoading("start");
@@ -618,6 +620,25 @@ export const authStore: Auth = {
 	submitDataFinalUpayPgw: thunk(async (actions, payload) => {
 		actions.startLoading("start");
 		const response = await submitDataFinalUpayPgw(payload);
+		if (response.status === 201 || response.status === 200) {
+			const body = await response.json();
+			actions.stopLoading("stop");
+			if (body?.messageType === 1) {
+				let requestUrl = body?.item;
+				window.open(requestUrl, '_self');
+			} else {
+				message.error(body?.message);
+			}
+
+		} else {
+			message.error('Something Went Wrong');
+			actions.stopLoading("stop");
+		}
+	}),
+
+	submitDataFinalForSSL: thunk(async (actions, payload) => {
+		actions.startLoading("start");
+		const response = await submitDataFinalSSL(payload);
 		if (response.status === 201 || response.status === 200) {
 			const body = await response.json();
 			actions.stopLoading("stop");
