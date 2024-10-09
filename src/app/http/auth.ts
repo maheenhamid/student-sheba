@@ -44,6 +44,10 @@ export const submitDataFinalUpayPgw = (payload: any) => {
   return post("/public/upay/pgw/init/request", payload);
 };
 
+export const submitDataFinalSSL = (payload: any) => {
+  return post("/public/get/online-fees-payment/ssl/gateway-url", payload);
+};
+
 export const delInvoice = (values: any) => {
   //console.group(auth)
   return del(

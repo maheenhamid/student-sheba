@@ -75,10 +75,6 @@ export function Sidebar(props: any) {
 					<Menu.Item key="7" icon={<FileTextOutlined />} >
 						<Link to="/hsc-form" className="nav-text">HSC Form</Link>
 					</Menu.Item> : null}
-				{checkType === 'school' ?
-					<Menu.Item key="889" icon={<FileTextOutlined />} >
-						<Link to="/marksheet" className="nav-text">Marksheet</Link>
-					</Menu.Item> : null}
 				{checkType === 'school' && user?.onlineProfileUpdateStatus === 1 &&
 					<Menu.Item key="5" icon={<UserOutlined />} >
 						<Link to="/profile" className="nav-text">Profile</Link>
