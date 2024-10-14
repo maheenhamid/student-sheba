@@ -42,8 +42,10 @@ export function Sidebar(props: any) {
 			setpathValue("13")
 		} else if (window.location.pathname == '/report-paid-unpaid') {
 			setpathValue("14")
-		}  else if (window.location.pathname == '/unipassword') {
+		} else if (window.location.pathname == '/unipassword') {
 			setpathValue("1011")
+		} else if (window.location.pathname == '/payment-premier') {
+			setpathValue("745")
 		}
 		else {
 			setpathValue("1")
@@ -51,9 +53,9 @@ export function Sidebar(props: any) {
 	}, [window.location.pathname])
 
 	// console.log(pathValue)
-	useEffect(()=>{
+	useEffect(() => {
 		setisPassword()
-	},[])
+	}, [])
 
 	return (
 		<>
@@ -64,6 +66,10 @@ export function Sidebar(props: any) {
 				<Menu.Item key="2" icon={<DollarCircleOutlined />} >
 					<Link to="/payment" className="nav-text">Fee Payment</Link>
 				</Menu.Item>
+				{checkType === 'school' ?
+					<Menu.Item key="745" icon={<DollarCircleOutlined />} >
+						<Link to="/payment-premier" className="nav-text">Premier Bank</Link>
+					</Menu.Item> : null}
 				<Menu.Item key="3" icon={<FilePdfOutlined />} >
 					<Link to="/report" className="nav-text">Fee Report</Link>
 				</Menu.Item>
@@ -86,7 +92,7 @@ export function Sidebar(props: any) {
 				}
 				{checkType === 'university' &&
 					<>
-						<Menu.Item key="14" icon={<FileDoneOutlined  />} >
+						<Menu.Item key="14" icon={<FileDoneOutlined />} >
 							<Link to="/report-paid-unpaid" className="nav-text">Student Ledger</Link>
 						</Menu.Item>
 						{/* <Menu.Item key="12" icon={<IdcardOutlined />} >
@@ -101,10 +107,10 @@ export function Sidebar(props: any) {
 					<Menu.Item key="5" icon={<UserOutlined />} >
 						<Link to="/profile" className="nav-text">Profile</Link>
 					</Menu.Item>
-				}				
-				
+				}
+
 				{isPassword === "true" &&
-					<Menu.Item key="1011" icon={<SecurityScanOutlined  />} >
+					<Menu.Item key="1011" icon={<SecurityScanOutlined />} >
 						<Link to="/unipassword" className="nav-text">Password Update</Link>
 					</Menu.Item>
 				}

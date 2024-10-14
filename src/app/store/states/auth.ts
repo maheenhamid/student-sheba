@@ -1,5 +1,5 @@
 import { Action, Thunk, thunk, action } from 'easy-peasy';
-import { login, collectionList, submitDataFinal, reportList, updateStudentProfileBasicInfo, updatData, updateStudentGuardianInfo, updateStudentAddressInfo, fetchDistrictList, fetchThanaList, saveStudentProfileUpdateToken, otpUsed, collectionListWithoutMonth, fetchpaidViews, fetchacademicYearList, collectionListAll, submitDataFinalBkash, submitDataFinalUpayPgw, fetchPublicExamList, fetchsingleStudentMarkView, submitDataFinalSSL } from '../../http/auth';
+import { login, collectionList, submitDataFinal, reportList, updateStudentProfileBasicInfo, updatData, updateStudentGuardianInfo, updateStudentAddressInfo, fetchDistrictList, fetchThanaList, saveStudentProfileUpdateToken, otpUsed, collectionListWithoutMonth, fetchpaidViews, fetchacademicYearList, collectionListAll, submitDataFinalBkash, submitDataFinalUpayPgw, fetchPublicExamList, fetchsingleStudentMarkView, submitDataFinalSSL, fetchPremierBank } from '../../http/auth';
 import { loginUni, collectionListUni, submitDataFinalUni, reportListUni, updateStudentGuardianInfoUniversity, updatDataUni, updateStudentProfileBasicInfoUniversity, updateStudentPhotoUniversity, saveStudentProfileUpdateTokenUniversity, otpUsedSendUniversity, fetchpaidViewsUniversity, fetchExamList, fetchExamList2, fetchledgerList, submitDataFinalBkashUniversity, loginUniPassword, passwordChangeUni, resetStudentPassword, sendStudentPasswordRecoveryToken, submitDataForUpayPgwUniversity } from '../../http/authuni';
 import { message, notification } from 'antd';
 
@@ -107,9 +107,12 @@ export interface Auth {
 	setledgerList: Action<Auth, any>;
 	ledgerList: any;
 	showModal: boolean;
-	setshowModal: Action<Auth, boolean>;	
+	setshowModal: Action<Auth, boolean>;
 	isPassword: any;
 	setisPassword: Action<Auth>;
+	fetchPremierBank: Thunk<Auth, any>;
+	setPremierBank: Action<Auth, any>;
+	premierBank: any;
 }
 
 export let token: string | undefined = undefined;
@@ -234,7 +237,7 @@ export const authStore: Auth = {
 			actions.loginFailed("Failed to login");
 		}
 	}),
-	
+
 	authenticateUniversityPassword: thunk(async (actions, payload) => {
 		actions.setcheckType(payload.type);
 		const response = await loginUniPassword(payload);
@@ -257,7 +260,7 @@ export const authStore: Auth = {
 
 			} else {
 				localStorage.removeItem("jwt");
-				notification.error({message:"Failed to login"})
+				notification.error({ message: "Failed to login" })
 			}
 
 		} else {
@@ -340,10 +343,10 @@ export const authStore: Auth = {
 	}),
 	setShow: action((state, payload) => {
 		state.show = payload;
-	}),	
+	}),
 	setshowModal: action((state, payload) => {
 		state.showModal = payload;
-	}),	
+	}),
 	setisPassword: action((state) => {
 		let password: any = localStorage.getItem("password");
 		state.isPassword = password;
@@ -543,7 +546,7 @@ export const authStore: Auth = {
 			//actions.loginFailed("Failed to login");
 			actions.stopLoading("stop");
 		}
-	}),	
+	}),
 	submitDataFinalBkash: thunk(async (actions, payload) => {
 		//console.log(payload)
 		actions.startLoading("start");
@@ -776,7 +779,7 @@ export const authStore: Auth = {
 			actions.stopLoading("stop");
 			//actions.loginFailed("Failed to login");
 		}
-	}),	
+	}),
 	sendStudentPasswordRecoveryToken: thunk(async (actions, payload) => {
 		//console.log(payload)
 		// actions.startLoading("start");
@@ -799,7 +802,7 @@ export const authStore: Auth = {
 			actions.stopLoading("stop");
 			//actions.loginFailed("Failed to login");
 		}
-	}),	
+	}),
 	passwordChangeUni: thunk(async (actions, payload) => {
 		//console.log(payload)
 		actions.startLoading("start");
@@ -824,7 +827,7 @@ export const authStore: Auth = {
 			actions.stopLoading("stop");
 			//actions.loginFailed("Failed to login");
 		}
-	}),	
+	}),
 	resetStudentPassword: thunk(async (actions, payload) => {
 		//console.log(payload)
 		actions.startLoading("start");
@@ -846,7 +849,7 @@ export const authStore: Auth = {
 				}, 500);
 			} else {
 				message.error(body?.message);
-				
+
 			}
 
 		} else {
@@ -1207,7 +1210,7 @@ export const authStore: Auth = {
 	setExamList: action((state, payload) => {
 		state.examList = payload;
 	}),
-	fetchExamList: thunk(async (actions, payload:any) => {
+	fetchExamList: thunk(async (actions, payload: any) => {
 		const response = await fetchExamList2(payload);
 		if (response.status === 201 || response.status === 200) {
 			const body = await response.json();
@@ -1215,12 +1218,12 @@ export const authStore: Auth = {
 		} else {
 			actions.setExamList([]);
 		}
-	}),	
+	}),
 	publicexamList: [],
 	setPublicExamList: action((state, payload) => {
 		state.publicexamList = payload;
 	}),
-	fetchPublicExamList: thunk(async (actions, payload:any) => {
+	fetchPublicExamList: thunk(async (actions, payload: any) => {
 		const response = await fetchPublicExamList(payload);
 		if (response.status === 201 || response.status === 200) {
 			const body = await response.json();
@@ -1258,7 +1261,7 @@ export const authStore: Auth = {
 	setledgerList: action((state, payload) => {
 		state.ledgerList = payload;
 	}),
-	fetchledgerList: thunk(async (actions, payload:any) => {
+	fetchledgerList: thunk(async (actions, payload: any) => {
 		const response = await fetchledgerList(payload);
 		actions.startLoading("start");
 		if (response.status === 201 || response.status === 200) {
@@ -1267,6 +1270,33 @@ export const authStore: Auth = {
 			actions.stopLoading("stop");
 		} else {
 			actions.setledgerList(null);
+			actions.stopLoading("stop");
+		}
+	}),
+	premierBank: null,
+	setPremierBank: action((state, payload) => {
+		state.premierBank = payload;
+	}),
+	fetchPremierBank: thunk(async (actions, payload: any) => {
+		actions.startLoading("start");
+		const response = await fetchPremierBank(payload);
+		if (response.status === 201 || response.status === 200) {
+			const body = await response.json();
+			if (body?.messageType === 1) {
+				if (body?.item?.status === 'success') {
+					actions.setPremierBank(body.item);
+				} else {
+					message.error(body.item?.message);
+					actions.setPremierBank(null);
+				}
+			}
+			if (body?.messageType === 0) {
+				message.error(body?.message);
+				actions.setPremierBank(null);
+			}
+			actions.stopLoading("stop");
+		} else {
+			actions.setPremierBank(null);
 			actions.stopLoading("stop");
 		}
 	}),
