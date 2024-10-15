@@ -46,6 +46,8 @@ export function Sidebar(props: any) {
 			setpathValue("1011")
 		} else if (window.location.pathname == '/payment-premier') {
 			setpathValue("745")
+		} else if (window.location.pathname == '/report-premier') {
+			setpathValue("746")
 		}
 		else {
 			setpathValue("1")
@@ -63,16 +65,20 @@ export function Sidebar(props: any) {
 				<Menu.Item key="1" icon={<InfoCircleOutlined />}>
 					<Link to="/" className="nav-text">Information</Link>
 				</Menu.Item>
-				<Menu.Item key="2" icon={<DollarCircleOutlined />} >
+				{/* <Menu.Item key="2" icon={<DollarCircleOutlined />} >
 					<Link to="/payment" className="nav-text">Fee Payment</Link>
-				</Menu.Item>
+				</Menu.Item> */}
 				{checkType === 'school' ?
 					<Menu.Item key="745" icon={<DollarCircleOutlined />} >
-						<Link to="/payment-premier" className="nav-text">Premier Bank</Link>
+						<Link to="/payment-premier" className="nav-text">Fee Payment</Link>
 					</Menu.Item> : null}
-				<Menu.Item key="3" icon={<FilePdfOutlined />} >
+				{/* <Menu.Item key="3" icon={<FilePdfOutlined />} >
 					<Link to="/report" className="nav-text">Fee Report</Link>
-				</Menu.Item>
+				</Menu.Item> */}
+				{checkType === 'school' ?
+					<Menu.Item key="746" icon={<DollarCircleOutlined />} >
+						<Link to="/report-premier" className="nav-text">Fee Report</Link>
+					</Menu.Item> : null}
 				{checkType === 'school' ?
 					<Menu.Item key="4" icon={<FileTextOutlined />} >
 						<Link to="/result" className="nav-text">Result</Link>

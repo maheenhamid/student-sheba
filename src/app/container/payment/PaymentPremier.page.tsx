@@ -1,6 +1,6 @@
 import { LoadingOutlined } from '@ant-design/icons';
 import { Form, Row, Select, Col, Button, Spin, Card, } from 'antd';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useStoreActions, useStoreState } from '../../store/hooks/easyPeasy';
 import { SelectAcademicYear } from '../profile/SelectAcademicYear';
 
@@ -11,7 +11,11 @@ export default function PaymentPremier(props) {
     const loading = useStoreState(state => state.auth.loading)
     const premierBank = useStoreState(state => state.auth.premierBank)
     const fetchPremierBank = useStoreActions(state => state.auth.fetchPremierBank);
-
+    const getFeesPaymentSslPageLink = useStoreActions(state => state.auth.getFeesPaymentSslPageLink);
+    const fetchacademicYearList = useStoreActions((state) => state.auth.fetchacademicYearList);
+    useEffect(() => {
+        fetchacademicYearList(user?.instituteId)
+    }, [])
     const [form] = Form.useForm();
 
     // console.log(tableData)
@@ -21,9 +25,6 @@ export default function PaymentPremier(props) {
     ) {
         isMobile = true;
     }
-    const [submitTableData, setsubmitTableData] = useState<any>([])
-
-
 
     const onFinish = (values: any) => {
         let payload: any = {
@@ -35,15 +36,13 @@ export default function PaymentPremier(props) {
         fetchPremierBank(payload);
     };
 
+    // const currentyear = new Date().getFullYear();
 
-
-    const currentyear = new Date().getFullYear();
-
-    const optionsYear = [
-        { value: currentyear - 1, label: currentyear - 1 },
-        { value: currentyear, label: currentyear },
-        { value: currentyear + 1, label: currentyear + 1 }
-    ]
+    // const optionsYear = [
+    //     { value: currentyear - 1, label: currentyear - 1 },
+    //     { value: currentyear, label: currentyear },
+    //     { value: currentyear + 1, label: currentyear + 1 }
+    // ]
 
     const optionsMonth = [
         { value: "1", label: "January" },
@@ -65,7 +64,10 @@ export default function PaymentPremier(props) {
     const antIcon = <LoadingOutlined style={{ fontSize: 50 }} spin />;
 
     const onPay = () => {
-        console.log(premierBank)
+        delete premierBank?.status;
+        delete premierBank?.message;
+        premierBank.instituteId = user?.instituteId;
+        getFeesPaymentSslPageLink(premierBank);
     }
 
     return (
@@ -85,7 +87,7 @@ export default function PaymentPremier(props) {
                                     { required: true, message: "Please Select Year" },
                                 ]}
                             >
-                                <Select allowClear placeholder="Select Year" options={optionsYear} />
+                                 <SelectAcademicYear />
                             </Form.Item>
                         </Col>
                         <Col xs={24} sm={24} md={24} lg={8} xl={8}>
