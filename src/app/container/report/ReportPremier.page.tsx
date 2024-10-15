@@ -73,7 +73,7 @@ const ComponentToPrint = React.forwardRef((props: any, ref: any) => {
                 <div>
                     <Avatar
                         size={70}
-                        src={"data:image/png;base64," + info?.instituteLogo}
+                        src={ info?.logoLink}
                         style={{ margin: "auo" }}
                     />
                 </div>
