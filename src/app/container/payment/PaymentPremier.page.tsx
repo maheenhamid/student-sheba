@@ -171,7 +171,7 @@ export default function PaymentPremier(props) {
                                     <span className='separator'> : </span>
                                 </Col>
                                 <Col span={10}>
-                                    <span className='details'> {premierBank?.amount} </span>
+                                    <span className='details'> {premierBank?.feesAmount} </span>
                                 </Col>
                             </Row>
                             <Row>

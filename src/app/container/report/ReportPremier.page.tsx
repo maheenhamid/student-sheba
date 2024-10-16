@@ -120,12 +120,22 @@ const ComponentToPrint = React.forwardRef((props: any, ref: any) => {
                         </div>
                         <div className="form-row">
                             <label>
-                                Bank Transaction:
+                                Bank Transaction ID:
                                 <div className="static-value">{data?.bankTransactionId}</div>
                             </label>
                             <label>
                                 Fees Amount:
                                 <div className="static-value">{data?.feesAmount}</div>
+                            </label>
+                        </div>
+                        <div className="form-row">
+                            <label>
+                                Year:
+                                <div className="static-value">{data?.paymentYear}</div>
+                            </label>
+                            <label>
+                                Month:
+                                <div className="static-value">{data?.monthName}</div>
                             </label>
                         </div>
                         <div className="form-row-full">
@@ -180,11 +190,6 @@ export default function ReportPremier(props) {
             key: 'accountName',
         },
         {
-            title: 'Name',
-            dataIndex: 'cusName',
-            key: 'cusName',
-        },
-        {
             title: 'Father Name',
             dataIndex: 'fatherName',
             key: 'fatherName',
@@ -201,8 +206,8 @@ export default function ReportPremier(props) {
         },
         {
             title: 'Month',
-            dataIndex: 'monthSerial',
-            key: 'monthSerial',
+            dataIndex: 'monthName',
+            key: 'monthName',
         },
         {
             title: 'Fees Amount',
@@ -215,7 +220,7 @@ export default function ReportPremier(props) {
             key: 'serviceCharge',
         },
         {
-            title: 'Amount',
+            title: 'Total Amount',
             dataIndex: 'amount',
             key: 'amount',
         },
@@ -225,20 +230,11 @@ export default function ReportPremier(props) {
             key: 'bankTransactionId',
         },
         {
-            title: 'Roll',
-            dataIndex: 'accountRoll',
-            key: 'accountRoll',
-        },
-        {
             title: 'Transaction Date',
             dataIndex: 'transactionDate',
             key: 'transactionDate',
         },
-        {
-            title: 'Transaction Time',
-            dataIndex: 'transactionTime',
-            key: 'transactionTime',
-        },
+
         {
             title: 'Print',
             fixed: 'right',
