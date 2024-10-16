@@ -549,3 +549,15 @@ input.ant-input.ant-input-disabled {
     transform: translate(-100%, 0);
   }
 }
+
+.print-source {
+  display: none;
+  /* background-color: red; */
+}
+
+@media print {
+  .print-source {
+    display: block;
+    /* background-color: green; */
+  }
+}

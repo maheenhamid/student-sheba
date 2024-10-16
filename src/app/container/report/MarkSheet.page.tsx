@@ -1,11 +1,11 @@
 import { CalendarOutlined, FileTextOutlined, LoadingOutlined } from '@ant-design/icons';
 import { Form, Row, Select, Col, Button, Table, Result, Spin, Tooltip, List, Card, Modal } from 'antd';
-import React, { useEffect, useRef, useState } from 'react'
+import React, { forwardRef, useEffect, useRef, useState } from 'react'
 import { useStoreActions, useStoreState } from '../../store/hooks/easyPeasy';
 import { SelectAcademicYear } from '../profile/SelectAcademicYear';
 import { SelectExam } from '../profile/SelectExam';
 import ReactToPrint from 'react-to-print';
-import './Custom.css'
+// import './Custom.css'
 
 declare module 'react' {
     interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
@@ -13,7 +13,7 @@ declare module 'react' {
         name?: string;
     }
 }
-const ComponentToPrint = React.forwardRef((props: any, ref: any) => {
+const ComponentToPrint = forwardRef((props: any, ref: any) => {
     const { data, info } = props;
 
     return (

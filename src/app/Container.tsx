@@ -7,6 +7,8 @@ import TopNavBar from './topNavbar'
 import { Sidebar } from './layouts/sidebar/Sidebar';
 import Information from './container/information/Information.page';
 import Payment from './container/payment/Payment.page';
+import PaymentPremier from './container/payment/PaymentPremier.page';
+import ReportPremier from './container/report/ReportPremier.page';
 import Bkash from './container/payment/Bkash.page';
 import Report from './container/report/Report.page';
 import ResultPage from './container/result/Result.page';
@@ -155,8 +157,10 @@ export default function Container() {
 					<Switch>
 						<Route exact path="/" component={Information} />
 						<Route exact path="/payment" component={Payment} />
+						<Route exact path="/payment-premier" component={PaymentPremier} />
 						<Route exact path="/bkash" component={Bkash} />
 						<Route exact path="/report" component={Report} />
+						<Route exact path="/report-premier" component={ReportPremier} />
 						<Route exact path="/result" component={ResultPage} />
 						<Route exact path="/marksheet" component={MarkSheet} />
 						<Route exact path="/hsc-form" component={HscForm} />
