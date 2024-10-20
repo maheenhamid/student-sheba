@@ -1,5 +1,5 @@
 import { Action, Thunk, thunk, action } from 'easy-peasy';
-import { login, collectionList, submitDataFinal, reportList, updateStudentProfileBasicInfo, updatData, updateStudentGuardianInfo, updateStudentAddressInfo, fetchDistrictList, fetchThanaList, saveStudentProfileUpdateToken, otpUsed, collectionListWithoutMonth, fetchpaidViews, fetchacademicYearList, collectionListAll, submitDataFinalBkash, submitDataFinalUpayPgw, fetchPublicExamList, fetchsingleStudentMarkView, submitDataFinalSSL, fetchPremierBank, getFeesPaymentSslPageLink, fetchpremierBankSslFeesTransactionList } from '../../http/auth';
+import { login, collectionList, submitDataFinal, reportList, updateStudentProfileBasicInfo, updatData, updateStudentGuardianInfo, updateStudentAddressInfo, fetchDistrictList, fetchThanaList, saveStudentProfileUpdateToken, otpUsed, collectionListWithoutMonth, fetchpaidViews, fetchacademicYearList, collectionListAll, submitDataFinalBkash, submitDataFinalUpayPgw, fetchPublicExamList, fetchsingleStudentMarkView, submitDataFinalSSL, fetchPremierBank, getFeesPaymentSslPageLink, fetchpremierBankSslFeesTransactionList, studentSignup } from '../../http/auth';
 import { loginUni, collectionListUni, submitDataFinalUni, reportListUni, updateStudentGuardianInfoUniversity, updatDataUni, updateStudentProfileBasicInfoUniversity, updateStudentPhotoUniversity, saveStudentProfileUpdateTokenUniversity, otpUsedSendUniversity, fetchpaidViewsUniversity, fetchExamList, fetchExamList2, fetchledgerList, submitDataFinalBkashUniversity, loginUniPassword, passwordChangeUni, resetStudentPassword, sendStudentPasswordRecoveryToken, submitDataForUpayPgwUniversity } from '../../http/authuni';
 import { message, notification } from 'antd';
 
@@ -9,6 +9,7 @@ export interface Auth {
 	user: any | undefined,
 	checkAuth: Thunk<Auth>;
 	authenticated: Action<Auth, any>;
+	studentSignup: Thunk<Auth, any>;
 	authenticate: Thunk<Auth, any>;
 	authenticateQR: Thunk<Auth, any>;
 	authenticate2: Thunk<Auth, any>;
@@ -662,7 +663,7 @@ export const authStore: Auth = {
 			actions.stopLoading("stop");
 		}
 	}),
-	
+
 	getFeesPaymentSslPageLink: thunk(async (actions, payload) => {
 		actions.startLoading("start");
 		const response = await getFeesPaymentSslPageLink(payload);
@@ -1348,6 +1349,26 @@ export const authStore: Auth = {
 			message.error('Something Went Wrong');
 			actions.stopLoading("stop");
 			//actions.loginFailed("Failed to login");
+		}
+	}),
+
+	studentSignup: thunk(async (actions, payload) => {
+		const response = await studentSignup(payload);
+		actions.setBusy(false);
+		if (response.status === 201 || response.status === 200) {
+			const body = await response.json();
+			//sessionStorage.setItem("jwt", JSON.stringify(body?.item));
+			console.log(body)
+			if (body.messageType === 1) {
+				notification.success({ message: body?.message, duration:0 })
+
+			} else {
+				notification.success({ message: body?.message })
+			}
+
+		} else {
+			notification.success({ message: "Something went wrong " })
+
 		}
 	}),
 }
