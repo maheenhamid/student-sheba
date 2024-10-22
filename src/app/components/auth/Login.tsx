@@ -7,7 +7,7 @@ import play from "../../../images/google-play-badge.svg";
 import loginBanner from "./login-banner-image.png";
 import loginBannerMobile from "./login-mobile.png";
 import handShake from "./hand-shake.svg";
-import topBanner from "./login-banner.png";
+import { Link } from "react-router-dom";
 import { useStoreActions, useStoreState } from '../../store/hooks/easyPeasy';
 
 
@@ -52,7 +52,7 @@ export function Login() {
     const showModal = useStoreState(state => state.auth.showModal);
     const user = useStoreState(state => state.auth.user);
     let rememberChoice: boolean = true;
-   
+
     let type = '';
 
     if (user) {
@@ -68,14 +68,14 @@ export function Login() {
         type = value;
         localStorage.setItem("type", JSON.stringify(value));
     }
- 
+
     const handleSubmit = async (payload) => {
         setBusy(true);
         payload.remember = rememberChoice;
         payload.type = rememberChoice;
         if (payload?.password?.length === 7) {
             localStorage.setItem("type", JSON.stringify('university'));
-            universityPayload= payload;
+            universityPayload = payload;
             authenticateUniversity(payload);
         } else {
             localStorage.setItem("type", JSON.stringify('school'));
@@ -199,18 +199,21 @@ export function Login() {
                                                     </>
                                                 }
                                                 {mobileDisplay &&
-                                                    <Row>
+                                                    <>
+                                                        <Row>
 
-                                                        <Col xs={24}>
-                                                            <Button className='success-button' type="primary" htmlType="submit" disabled={isBusy} block={true}>
-                                                                {isBusy ? <Spin indicator={antIcon} /> : 'Login'}
-                                                            </Button>
+                                                            <Col xs={24}>
+                                                                <Button className='success-button' type="primary" htmlType="submit" disabled={isBusy} block={true}>
+                                                                    {isBusy ? <Spin indicator={antIcon} /> : 'Login'}
+                                                                </Button>
 
-                                                        </Col>
-                                                        <Col xs={24}>
-                                                            <Checkbox onChange={onRememberChange}>Remember me</Checkbox>
-                                                        </Col>
-                                                    </Row>
+                                                            </Col>
+                                                            <Col xs={24}>
+                                                                <Checkbox onChange={onRememberChange}>Remember me</Checkbox>
+                                                            </Col>
+                                                        </Row>
+
+                                                    </>
                                                 }
 
                                                 {
@@ -220,7 +223,17 @@ export function Login() {
                                         </div>
                                         <Row>
                                             <Col span={24}>
-                                                <div className="social-button-wrapper">
+                                                <div style={{ textAlign: "center" }}>
+
+                                                    <p>Don't have an account? <br />
+                                                        <Link to="/student-signup"> Sign Up a new account</Link>
+                                                    </p>
+                                                </div>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col span={24}>
+                                                <div className="social-button-wrapper" style={{ marginBottom: 0 }}>
                                                     <Button type="primary" shape="circle" href="#" size="large" onClick={() => window.open("https://www.facebook.com/shebadigitalltd", "_blank")}><FacebookFilled /></Button>
                                                     <Button type="primary" shape="circle" href="#" size="large" onClick={() => window.open("https://www.linkedin.com/company/sdlltd", "_blank")}><LinkedinFilled /></Button>
                                                     <Button type="primary" shape="circle" href="#" size="large" onClick={() => window.open("https://www.youtube.com/channel/UClbBrxTaRlbFj0-5S2AbNmw", "_blank")}><YoutubeFilled /></Button>
@@ -313,6 +326,16 @@ export function Login() {
                                                     </Col>
                                                     <Col span={24}>
                                                         <Checkbox defaultChecked onChange={onRememberChange}>Remember me</Checkbox>
+                                                    </Col>
+                                                </Row>
+                                                <Row>
+                                                    <Col span={24}>
+                                                        <div style={{ textAlign: "center" }}>
+                                                            <br />
+                                                            <p>Don't have an account? <br />
+                                                                <Link to="/student-signup"> Sign Up a new account</Link>
+                                                            </p>
+                                                        </div>
                                                     </Col>
                                                 </Row>
                                                 <Col span={24}>
