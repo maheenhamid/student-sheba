@@ -104,3 +104,4 @@ export const fetchPublicExamList = (id) => get(`/public/exam/list?instituteId=${
 export const fetchPremierBank = (payload: any) => {return post("/public/premier/bank/student/payment/query", payload)};
 export const getFeesPaymentSslPageLink = (payload: any) => {return post("/public/premier/bank/student/payment/link", payload)};
 export const fetchpremierBankSslFeesTransactionList = (payload: any) => {return post("/public/premier/bank/ssl/fees-payment/list", payload)};
+export const studentSignup = (payload: any) => {return post("/public/premier/bank/student/sign-up", payload)};
