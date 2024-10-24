@@ -156,15 +156,15 @@ export function Login() {
                                         </div>
                                         <div style={{ padding: '20px', paddingBottom: '0' }}>
                                             <Form name="login" onFinish={handleSubmit}>
-                                                <Form.Item className='no-boxshadows' style={{ width: '100%' }} name='username' rules={[{ required: true, message: 'Please input your student id' }]}>
+                                                <Form.Item className='no-boxshadows' style={{ width: '100%' }} name='username' rules={[{ required: true, message: 'Please input your Account' }]}>
                                                     <Input
                                                         className='no-boxshadows'
                                                         name="username"
                                                         style={{ width: '100%' }}
-                                                        placeholder="Student Id"
+                                                        placeholder="Account"
                                                         prefix={<UserOutlined className="site-form-item-icon" />}
                                                         suffix={
-                                                            <Tooltip title="Student Id">
+                                                            <Tooltip title="Account">
                                                                 <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)' }} />
                                                             </Tooltip>
                                                         }
@@ -269,12 +269,12 @@ export function Login() {
                                         <img src={loginBanner} />
                                     </div>
                                 </div>
-                                <div className='play-store-wrapper'>
+                                {/* <div className='play-store-wrapper'>
                                     <p>Please download the mobile app </p>
                                     <a className="me-lg-3 mb-4 mb-lg-0" rel="noopener noreferrer" target="_blank" href="https://play.google.com/store/apps/details?id=com.sdl.epay">
                                         <img className="app-badge" src={play} alt="Sheba E-Pay" width={"45%"} />
                                     </a>
-                                </div>
+                                </div> */}
                             </aside>
                             <div className="login-form-wrapper">
                                 <div className="login-form-inner">
@@ -286,13 +286,13 @@ export function Login() {
                                     </div>
                                     <div>
                                         <Form name="login" onFinish={handleSubmit}>
-                                            <Form.Item name='username' rules={[{ required: true, message: 'Please input your student id' }]}>
+                                            <Form.Item name='username' rules={[{ required: true, message: 'Please input your Account' }]}>
                                                 <Input
                                                     name="username"
-                                                    placeholder="Student Id"
+                                                    placeholder="Account"
                                                     prefix={<UserOutlined className="site-form-item-icon" />}
                                                     suffix={
-                                                        <Tooltip title="Student Id">
+                                                        <Tooltip title="Account">
                                                             <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)' }} />
                                                         </Tooltip>
                                                     }

@@ -70,12 +70,12 @@ export function PremierSignup() {
                                     <img src={loginBanner} />
                                 </div>
                             </div>
-                            <div className='play-store-wrapper'>
+                            {/* <div className='play-store-wrapper'>
                                 <p>Please download the mobile app </p>
                                 <a className="me-lg-3 mb-4 mb-lg-0" rel="noopener noreferrer" target="_blank" href="https://play.google.com/store/apps/details?id=com.sdl.epay">
                                     <img className="app-badge" src={play} alt="Sheba E-Pay" width={"45%"} />
                                 </a>
-                            </div>
+                            </div> */}
                         </aside>
                         <div className="login-form-wrapper">
                             <div className="login-form-inner" style={{ width: 550 }}>
