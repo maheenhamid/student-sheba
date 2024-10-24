@@ -4,9 +4,9 @@ import { Redirect } from "react-router-dom";
 import { InfoCircleOutlined, UserOutlined, LoadingOutlined, HomeOutlined, MailOutlined, PhoneOutlined, KeyOutlined, FacebookOutlined, FacebookFilled, InstagramFilled, TwitterCircleFilled, YoutubeFilled, LinkedinFilled } from '@ant-design/icons';
 import logo from "./student-sheba-logo.svg";
 import play from "../../../images/google-play-badge.svg";
-import loginBanner from "./login-banner-image.png";
+import loginBanner from "./login-banner-1.jpeg";
 import loginBannerMobile from "./login-mobile.png";
-import handShake from "./hand-shake.svg";
+import handShake from "./handshake.png";
 import { Link } from "react-router-dom";
 import { useStoreActions, useStoreState } from '../../store/hooks/easyPeasy';
 
@@ -249,7 +249,7 @@ export function Login() {
                                             </Col>
                                         </Row>
                                         <div className="text-center mb-30">
-                                            <span className='copyright'>Powered By <a href='https://www.sheba-digital.com/'>Sheba Digital Limited</a> & Sonali Bank Limited</span>
+                                            <span className='copyright'>Powered By <a href='https://www.sheba-digital.com/'>Sheba Digital Limited</a></span>
                                         </div>
                                     </div>
                                 </div>
